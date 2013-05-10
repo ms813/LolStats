@@ -1,0 +1,3314 @@
+From efc34d300fbc9e86e77e5b9edee6ecc0e59f5ed8 Mon Sep 17 00:00:00 2001
+From: Matthew Smith <matthew.smith813@gmail.com>
+Date: 10-May-2013 17:57:45
+
+Initial commit
+
+
+diff --git a/build.xml b/build.xml
+new file mode 100644
+index 0000000..971782b
+--- /dev/null
++++ b/build.xml
+@@ -0,0 +1,74 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!-- You may freely edit this file. See commented blocks below for -->
++<!-- some examples of how to customize the build. -->
++<!-- (If you delete it and reopen the project it will be recreated.) -->
++<!-- By default, only the Clean and Build commands use this build script. -->
++<!-- Commands such as Run, Debug, and Test only use this build script if -->
++<!-- the Compile on Save feature is turned off for the project. -->
++<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
++<!-- in the project's Project Properties dialog box.-->
++<project name="LoLStats" default="default" basedir=".">
++    <description>Builds, tests, and runs the project LoLStats.</description>
++    <import file="nbproject/build-impl.xml"/>
++    <!--
++
++    There exist several targets which are by default empty and which can be 
++    used for execution of your tasks. These targets are usually executed 
++    before and after some main targets. They are: 
++
++      -pre-init:                 called before initialization of project properties
++      -post-init:                called after initialization of project properties
++      -pre-compile:              called before javac compilation
++      -post-compile:             called after javac compilation
++      -pre-compile-single:       called before javac compilation of single file
++      -post-compile-single:      called after javac compilation of single file
++      -pre-compile-test:         called before javac compilation of JUnit tests
++      -post-compile-test:        called after javac compilation of JUnit tests
++      -pre-compile-test-single:  called before javac compilation of single JUnit test
++      -post-compile-test-single: called after javac compilation of single JUunit test
++      -pre-jar:                  called before JAR building
++      -post-jar:                 called after JAR building
++      -post-clean:               called after cleaning build products
++
++    (Targets beginning with '-' are not intended to be called on their own.)
++
++    Example of inserting an obfuscator after compilation could look like this:
++
++        <target name="-post-compile">
++            <obfuscate>
++                <fileset dir="${build.classes.dir}"/>
++            </obfuscate>
++        </target>
++
++    For list of available properties check the imported 
++    nbproject/build-impl.xml file. 
++
++
++    Another way to customize the build is by overriding existing main targets.
++    The targets of interest are: 
++
++      -init-macrodef-javac:     defines macro for javac compilation
++      -init-macrodef-junit:     defines macro for junit execution
++      -init-macrodef-debug:     defines macro for class debugging
++      -init-macrodef-java:      defines macro for class execution
++      -do-jar-with-manifest:    JAR building (if you are using a manifest)
++      -do-jar-without-manifest: JAR building (if you are not using a manifest)
++      run:                      execution of project 
++      -javadoc-build:           Javadoc generation
++      test-report:              JUnit report generation
++
++    An example of overriding the target for project execution could look like this:
++
++        <target name="run" depends="LoLStats-impl.jar">
++            <exec dir="bin" executable="launcher.exe">
++                <arg file="${dist.jar}"/>
++            </exec>
++        </target>
++
++    Notice that the overridden target depends on the jar target and not only on 
++    the compile target as the regular run target does. Again, for a list of available 
++    properties which you can use, check the target you are overriding in the
++    nbproject/build-impl.xml file. 
++
++    -->
++</project>
+diff --git a/build/built-jar.properties b/build/built-jar.properties
+new file mode 100644
+index 0000000..0f64d03
+--- /dev/null
++++ b/build/built-jar.properties
+@@ -0,0 +1,4 @@
++#Fri, 10 May 2013 00:11:23 +0100
++
++
++Z\:\\Users\\Matthew\\Documents\\NetBeansProjects\\LolStats=
+diff --git a/build/classes/LoLStats/LolStats$1.class b/build/classes/LoLStats/LolStats$1.class
+new file mode 100644
+index 0000000..8dd64a1
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$1.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$2.class b/build/classes/LoLStats/LolStats$2.class
+new file mode 100644
+index 0000000..45dd011
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$2.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$3.class b/build/classes/LoLStats/LolStats$3.class
+new file mode 100644
+index 0000000..fbfecba
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$3.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$4.class b/build/classes/LoLStats/LolStats$4.class
+new file mode 100644
+index 0000000..88e678d
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$4.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$5.class b/build/classes/LoLStats/LolStats$5.class
+new file mode 100644
+index 0000000..8e41a7d
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$5.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$6.class b/build/classes/LoLStats/LolStats$6.class
+new file mode 100644
+index 0000000..6502732
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$6.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats$7.class b/build/classes/LoLStats/LolStats$7.class
+new file mode 100644
+index 0000000..e6b3ce5
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats$7.class
+Binary files differ
+diff --git a/build/classes/LoLStats/LolStats.class b/build/classes/LoLStats/LolStats.class
+new file mode 100644
+index 0000000..56e5918
+--- /dev/null
++++ b/build/classes/LoLStats/LolStats.class
+Binary files differ
+diff --git a/build/classes/LoLStats/MatchRecord.class b/build/classes/LoLStats/MatchRecord.class
+new file mode 100644
+index 0000000..1cbb68b
+--- /dev/null
++++ b/build/classes/LoLStats/MatchRecord.class
+Binary files differ
+diff --git a/build/classes/LoLStats/RecordListRenderer.class b/build/classes/LoLStats/RecordListRenderer.class
+new file mode 100644
+index 0000000..3922da6
+--- /dev/null
++++ b/build/classes/LoLStats/RecordListRenderer.class
+Binary files differ
+diff --git a/champions.csv b/champions.csv
+new file mode 100644
+index 0000000..1e3de2b
+--- /dev/null
++++ b/champions.csv
+@@ -0,0 +1 @@
++Ahri, Akali, Alistar, Amumu, Anivia, Annie, Ashe, Blitzcrank, Brand, Caitlyn, Cassiopeia, Cho'Gath, Corki, Darius, Diana, Dr. Mundo, Draven, Elise, Evelynn, Ezreal, Fiddlesticks, Fiora, Fizz, Galio, Gangplank, Garen, Gragas, Graves, Hecarim, Heimerdinger, Irelia, Janna, Jarvan IV, Jax, Jayce, Karma, Karthus, Kassadin, Katarina, Kayle, Kennen, Kha'Zix, Kog'Maw, LeBlanc, Lee Sin, Leona, Lulu, Lux, Malphite, Malzahar, Maokai, Master Yi, Miss Fortunne, Mordekaiser, Morgana, Nami, Nasus, Nautilus, Nidalee, Nocturne, Nunu, Olaf, Orianna, Pantheon, Poppy, Quinn, Rammus, Renekton, Rengar, Riven, Rumble, Ryze, Sejuani, Shaco, Shen, Shyvana, Singed, Sion, Sivir, Skarner, Sona, Soraka, Swain, Syndra, Talon, Taric, Teemo, Thresh, Tristana, Trundle, Tryndamere, Twisted Fate, Twitch, Udyr, Urgot, Varus, Vayne, Veigar, Vi, Viktor, Vladimir, Volibear, Warwick, Wukong, Xerath, Xin Zhao, Yorick, Zac, Zed, Ziggs, Zilean, Zyra
+diff --git a/dist/LoLStats.jar b/dist/LoLStats.jar
+new file mode 100644
+index 0000000..32d366b
+--- /dev/null
++++ b/dist/LoLStats.jar
+Binary files differ
+diff --git a/dist/README.TXT b/dist/README.TXT
+new file mode 100644
+index 0000000..686e769
+--- /dev/null
++++ b/dist/README.TXT
+@@ -0,0 +1,32 @@
++========================
++BUILD OUTPUT DESCRIPTION
++========================
++
++When you build an Java application project that has a main class, the IDE
++automatically copies all of the JAR
++files on the projects classpath to your projects dist/lib folder. The IDE
++also adds each of the JAR files to the Class-Path element in the application
++JAR files manifest file (MANIFEST.MF).
++
++To run the project from the command line, go to the dist folder and
++type the following:
++
++java -jar "LoLStats.jar" 
++
++To distribute this project, zip up the dist folder (including the lib folder)
++and distribute the ZIP file.
++
++Notes:
++
++* If two JAR files on the project classpath have the same name, only the first
++JAR file is copied to the lib folder.
++* Only JAR files are copied to the lib folder.
++If the classpath contains other types of files or folders, these files (folders)
++are not copied.
++* If a library on the projects classpath also has a Class-Path element
++specified in the manifest,the content of the Class-Path element has to be on
++the projects runtime path.
++* To set a main class in a standard Java project, right-click the project node
++in the Projects window and choose Properties. Then click Run and enter the
++class name in the Main Class field. Alternatively, you can manually type the
++class name in the manifest Main-Class element.
+diff --git a/dist/lib/beansbinding-1.2.1.jar b/dist/lib/beansbinding-1.2.1.jar
+new file mode 100644
+index 0000000..7f26dc3
+--- /dev/null
++++ b/dist/lib/beansbinding-1.2.1.jar
+Binary files differ
+diff --git a/dist/lib/commons-io-2.4.jar b/dist/lib/commons-io-2.4.jar
+new file mode 100644
+index 0000000..90035a4
+--- /dev/null
++++ b/dist/lib/commons-io-2.4.jar
+Binary files differ
+diff --git a/dist/lib/jcalendar-1.4.jar b/dist/lib/jcalendar-1.4.jar
+new file mode 100644
+index 0000000..617a335
+--- /dev/null
++++ b/dist/lib/jcalendar-1.4.jar
+Binary files differ
+diff --git a/dist/lib/joda-time-2.2.jar b/dist/lib/joda-time-2.2.jar
+new file mode 100644
+index 0000000..69fa924
+--- /dev/null
++++ b/dist/lib/joda-time-2.2.jar
+Binary files differ
+diff --git a/dist/lib/opencsv-2.3.jar b/dist/lib/opencsv-2.3.jar
+new file mode 100644
+index 0000000..32b00f9
+--- /dev/null
++++ b/dist/lib/opencsv-2.3.jar
+Binary files differ
+diff --git a/dist/lib/xstream-1.4.4.jar b/dist/lib/xstream-1.4.4.jar
+new file mode 100644
+index 0000000..dcedd5a
+--- /dev/null
++++ b/dist/lib/xstream-1.4.4.jar
+Binary files differ
+diff --git a/manifest.mf b/manifest.mf
+new file mode 100644
+index 0000000..1307983
+--- /dev/null
++++ b/manifest.mf
+@@ -0,0 +1,3 @@
++Manifest-Version: 1.0
++X-COMMENT: 
++
+diff --git a/nbproject/build-impl.xml b/nbproject/build-impl.xml
+new file mode 100644
+index 0000000..d1af202
+--- /dev/null
++++ b/nbproject/build-impl.xml
+@@ -0,0 +1,1411 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++*** GENERATED FROM project.xml - DO NOT EDIT  ***
++***         EDIT ../build.xml INSTEAD         ***
++
++For the purpose of easier reading the script
++is divided into following sections:
++
++  - initialization
++  - compilation
++  - jar
++  - execution
++  - debugging
++  - javadoc
++  - test compilation
++  - test execution
++  - test debugging
++  - applet
++  - cleanup
++
++        -->
++<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="LoLStats-impl">
++    <fail message="Please build using Ant 1.8.0 or higher.">
++        <condition>
++            <not>
++                <antversion atleast="1.8.0"/>
++            </not>
++        </condition>
++    </fail>
++    <target depends="test,jar,javadoc" description="Build and test whole project." name="default"/>
++    <!-- 
++                ======================
++                INITIALIZATION SECTION 
++                ======================
++            -->
++    <target name="-pre-init">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="-pre-init" name="-init-private">
++        <property file="nbproject/private/config.properties"/>
++        <property file="nbproject/private/configs/${config}.properties"/>
++        <property file="nbproject/private/private.properties"/>
++    </target>
++    <target depends="-pre-init,-init-private" name="-init-user">
++        <property file="${user.properties.file}"/>
++        <!-- The two properties below are usually overridden -->
++        <!-- by the active platform. Just a fallback. -->
++        <property name="default.javac.source" value="1.4"/>
++        <property name="default.javac.target" value="1.4"/>
++    </target>
++    <target depends="-pre-init,-init-private,-init-user" name="-init-project">
++        <property file="nbproject/configs/${config}.properties"/>
++        <property file="nbproject/project.properties"/>
++    </target>
++    <target depends="-pre-init,-init-private,-init-user,-init-project,-init-macrodef-property" name="-do-init">
++        <available file="${manifest.file}" property="manifest.available"/>
++        <condition property="splashscreen.available">
++            <and>
++                <not>
++                    <equals arg1="${application.splash}" arg2="" trim="true"/>
++                </not>
++                <available file="${application.splash}"/>
++            </and>
++        </condition>
++        <condition property="main.class.available">
++            <and>
++                <isset property="main.class"/>
++                <not>
++                    <equals arg1="${main.class}" arg2="" trim="true"/>
++                </not>
++            </and>
++        </condition>
++        <condition property="manifest.available+main.class">
++            <and>
++                <isset property="manifest.available"/>
++                <isset property="main.class.available"/>
++            </and>
++        </condition>
++        <condition property="do.archive">
++            <not>
++                <istrue value="${jar.archive.disabled}"/>
++            </not>
++        </condition>
++        <condition property="do.mkdist">
++            <and>
++                <isset property="do.archive"/>
++                <isset property="libs.CopyLibs.classpath"/>
++                <not>
++                    <istrue value="${mkdist.disabled}"/>
++                </not>
++            </and>
++        </condition>
++        <condition property="manifest.available+main.class+mkdist.available">
++            <and>
++                <istrue value="${manifest.available+main.class}"/>
++                <isset property="do.mkdist"/>
++            </and>
++        </condition>
++        <condition property="do.archive+manifest.available">
++            <and>
++                <isset property="manifest.available"/>
++                <istrue value="${do.archive}"/>
++            </and>
++        </condition>
++        <condition property="do.archive+main.class.available">
++            <and>
++                <isset property="main.class.available"/>
++                <istrue value="${do.archive}"/>
++            </and>
++        </condition>
++        <condition property="do.archive+splashscreen.available">
++            <and>
++                <isset property="splashscreen.available"/>
++                <istrue value="${do.archive}"/>
++            </and>
++        </condition>
++        <condition property="do.archive+manifest.available+main.class">
++            <and>
++                <istrue value="${manifest.available+main.class}"/>
++                <istrue value="${do.archive}"/>
++            </and>
++        </condition>
++        <condition property="manifest.available-mkdist.available">
++            <or>
++                <istrue value="${manifest.available}"/>
++                <isset property="do.mkdist"/>
++            </or>
++        </condition>
++        <condition property="manifest.available+main.class-mkdist.available">
++            <or>
++                <istrue value="${manifest.available+main.class}"/>
++                <isset property="do.mkdist"/>
++            </or>
++        </condition>
++        <condition property="have.tests">
++            <or>
++                <available file="${test.src.dir}"/>
++            </or>
++        </condition>
++        <condition property="have.sources">
++            <or>
++                <available file="${src.dir}"/>
++            </or>
++        </condition>
++        <condition property="netbeans.home+have.tests">
++            <and>
++                <isset property="netbeans.home"/>
++                <isset property="have.tests"/>
++            </and>
++        </condition>
++        <condition property="no.javadoc.preview">
++            <and>
++                <isset property="javadoc.preview"/>
++                <isfalse value="${javadoc.preview}"/>
++            </and>
++        </condition>
++        <property name="run.jvmargs" value=""/>
++        <property name="run.jvmargs.ide" value=""/>
++        <property name="javac.compilerargs" value=""/>
++        <property name="work.dir" value="${basedir}"/>
++        <condition property="no.deps">
++            <and>
++                <istrue value="${no.dependencies}"/>
++            </and>
++        </condition>
++        <property name="javac.debug" value="true"/>
++        <property name="javadoc.preview" value="true"/>
++        <property name="application.args" value=""/>
++        <property name="source.encoding" value="${file.encoding}"/>
++        <property name="runtime.encoding" value="${source.encoding}"/>
++        <condition property="javadoc.encoding.used" value="${javadoc.encoding}">
++            <and>
++                <isset property="javadoc.encoding"/>
++                <not>
++                    <equals arg1="${javadoc.encoding}" arg2=""/>
++                </not>
++            </and>
++        </condition>
++        <property name="javadoc.encoding.used" value="${source.encoding}"/>
++        <property name="includes" value="**"/>
++        <property name="excludes" value=""/>
++        <property name="do.depend" value="false"/>
++        <condition property="do.depend.true">
++            <istrue value="${do.depend}"/>
++        </condition>
++        <path id="endorsed.classpath.path" path="${endorsed.classpath}"/>
++        <condition else="" property="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:'${toString:endorsed.classpath.path}'">
++            <length length="0" string="${endorsed.classpath}" when="greater"/>
++        </condition>
++        <condition else="false" property="jdkBug6558476">
++            <and>
++                <matches pattern="1\.[56]" string="${java.specification.version}"/>
++                <not>
++                    <os family="unix"/>
++                </not>
++            </and>
++        </condition>
++        <property name="javac.fork" value="${jdkBug6558476}"/>
++        <property name="jar.index" value="false"/>
++        <property name="jar.index.metainf" value="${jar.index}"/>
++        <property name="copylibs.rebase" value="true"/>
++        <available file="${meta.inf.dir}/persistence.xml" property="has.persistence.xml"/>
++        <condition property="junit.available">
++            <or>
++                <available classname="org.junit.Test" classpath="${run.test.classpath}"/>
++                <available classname="junit.framework.Test" classpath="${run.test.classpath}"/>
++            </or>
++        </condition>
++        <condition property="testng.available">
++            <available classname="org.testng.annotations.Test" classpath="${run.test.classpath}"/>
++        </condition>
++        <condition property="junit+testng.available">
++            <and>
++                <istrue value="${junit.available}"/>
++                <istrue value="${testng.available}"/>
++            </and>
++        </condition>
++        <condition else="testng" property="testng.mode" value="mixed">
++            <istrue value="${junit+testng.available}"/>
++        </condition>
++        <condition else="" property="testng.debug.mode" value="-mixed">
++            <istrue value="${junit+testng.available}"/>
++        </condition>
++    </target>
++    <target name="-post-init">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init" name="-init-check">
++        <fail unless="src.dir">Must set src.dir</fail>
++        <fail unless="test.src.dir">Must set test.src.dir</fail>
++        <fail unless="build.dir">Must set build.dir</fail>
++        <fail unless="dist.dir">Must set dist.dir</fail>
++        <fail unless="build.classes.dir">Must set build.classes.dir</fail>
++        <fail unless="dist.javadoc.dir">Must set dist.javadoc.dir</fail>
++        <fail unless="build.test.classes.dir">Must set build.test.classes.dir</fail>
++        <fail unless="build.test.results.dir">Must set build.test.results.dir</fail>
++        <fail unless="build.classes.excludes">Must set build.classes.excludes</fail>
++        <fail unless="dist.jar">Must set dist.jar</fail>
++    </target>
++    <target name="-init-macrodef-property">
++        <macrodef name="property" uri="http://www.netbeans.org/ns/j2se-project/1">
++            <attribute name="name"/>
++            <attribute name="value"/>
++            <sequential>
++                <property name="@{name}" value="${@{value}}"/>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-macrodef-javac-with-processors">
++        <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${src.dir}" name="srcdir"/>
++            <attribute default="${build.classes.dir}" name="destdir"/>
++            <attribute default="${javac.classpath}" name="classpath"/>
++            <attribute default="${javac.processorpath}" name="processorpath"/>
++            <attribute default="${build.generated.sources.dir}/ap-source-output" name="apgeneratedsrcdir"/>
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="${javac.debug}" name="debug"/>
++            <attribute default="${empty.dir}" name="sourcepath"/>
++            <attribute default="${empty.dir}" name="gensrcdir"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property location="${build.dir}/empty" name="empty.dir"/>
++                <mkdir dir="${empty.dir}"/>
++                <mkdir dir="@{apgeneratedsrcdir}"/>
++                <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" fork="${javac.fork}" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}" tempdir="${java.io.tmpdir}">
++                    <src>
++                        <dirset dir="@{gensrcdir}" erroronmissingdir="false">
++                            <include name="*"/>
++                        </dirset>
++                    </src>
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                    <compilerarg line="${endorsed.classpath.cmd.line.arg}"/>
++                    <compilerarg line="${javac.compilerargs}"/>
++                    <compilerarg value="-processorpath"/>
++                    <compilerarg path="@{processorpath}:${empty.dir}"/>
++                    <compilerarg line="${ap.processors.internal}"/>
++                    <compilerarg line="${annotation.processing.processor.options}"/>
++                    <compilerarg value="-s"/>
++                    <compilerarg path="@{apgeneratedsrcdir}"/>
++                    <compilerarg line="${ap.proc.none.internal}"/>
++                    <customize/>
++                </javac>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-ap-cmdline-properties" name="-init-macrodef-javac-without-processors" unless="ap.supported.internal">
++        <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${src.dir}" name="srcdir"/>
++            <attribute default="${build.classes.dir}" name="destdir"/>
++            <attribute default="${javac.classpath}" name="classpath"/>
++            <attribute default="${javac.processorpath}" name="processorpath"/>
++            <attribute default="${build.generated.sources.dir}/ap-source-output" name="apgeneratedsrcdir"/>
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="${javac.debug}" name="debug"/>
++            <attribute default="${empty.dir}" name="sourcepath"/>
++            <attribute default="${empty.dir}" name="gensrcdir"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property location="${build.dir}/empty" name="empty.dir"/>
++                <mkdir dir="${empty.dir}"/>
++                <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" fork="${javac.fork}" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}" tempdir="${java.io.tmpdir}">
++                    <src>
++                        <dirset dir="@{gensrcdir}" erroronmissingdir="false">
++                            <include name="*"/>
++                        </dirset>
++                    </src>
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                    <compilerarg line="${endorsed.classpath.cmd.line.arg}"/>
++                    <compilerarg line="${javac.compilerargs}"/>
++                    <customize/>
++                </javac>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-javac-with-processors,-init-macrodef-javac-without-processors" name="-init-macrodef-javac">
++        <macrodef name="depend" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${src.dir}" name="srcdir"/>
++            <attribute default="${build.classes.dir}" name="destdir"/>
++            <attribute default="${javac.classpath}" name="classpath"/>
++            <sequential>
++                <depend cache="${build.dir}/depcache" destdir="@{destdir}" excludes="${excludes}" includes="${includes}" srcdir="@{srcdir}">
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                </depend>
++            </sequential>
++        </macrodef>
++        <macrodef name="force-recompile" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${build.classes.dir}" name="destdir"/>
++            <sequential>
++                <fail unless="javac.includes">Must set javac.includes</fail>
++                <pathconvert pathsep="${line.separator}" property="javac.includes.binary">
++                    <path>
++                        <filelist dir="@{destdir}" files="${javac.includes}"/>
++                    </path>
++                    <globmapper from="*.java" to="*.class"/>
++                </pathconvert>
++                <tempfile deleteonexit="true" property="javac.includesfile.binary"/>
++                <echo file="${javac.includesfile.binary}" message="${javac.includes.binary}"/>
++                <delete>
++                    <files includesfile="${javac.includesfile.binary}"/>
++                </delete>
++                <delete>
++                    <fileset file="${javac.includesfile.binary}"/>
++                </delete>
++            </sequential>
++        </macrodef>
++    </target>
++    <target if="${junit.available}" name="-init-macrodef-junit-init">
++        <condition else="false" property="nb.junit.batch" value="true">
++            <and>
++                <istrue value="${junit.available}"/>
++                <not>
++                    <isset property="test.method"/>
++                </not>
++            </and>
++        </condition>
++        <condition else="false" property="nb.junit.single" value="true">
++            <and>
++                <istrue value="${junit.available}"/>
++                <isset property="test.method"/>
++            </and>
++        </condition>
++    </target>
++    <target name="-init-test-properties">
++        <property name="test.binaryincludes" value="&lt;nothing&gt;"/>
++        <property name="test.binarytestincludes" value=""/>
++        <property name="test.binaryexcludes" value=""/>
++    </target>
++    <target if="${nb.junit.single}" name="-init-macrodef-junit-single" unless="${nb.junit.batch}">
++        <macrodef name="junit" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property name="junit.forkmode" value="perTest"/>
++                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
++                    <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
++                    <syspropertyset>
++                        <propertyref prefix="test-sys-prop."/>
++                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <formatter type="brief" usefile="false"/>
++                    <formatter type="xml"/>
++                    <jvmarg value="-ea"/>
++                    <customize/>
++                </junit>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-test-properties" if="${nb.junit.batch}" name="-init-macrodef-junit-batch" unless="${nb.junit.single}">
++        <macrodef name="junit" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property name="junit.forkmode" value="perTest"/>
++                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
++                    <batchtest todir="${build.test.results.dir}">
++                        <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
++                            <filename name="@{testincludes}"/>
++                        </fileset>
++                        <fileset dir="${build.test.classes.dir}" excludes="@{excludes},${excludes},${test.binaryexcludes}" includes="${test.binaryincludes}">
++                            <filename name="${test.binarytestincludes}"/>
++                        </fileset>
++                    </batchtest>
++                    <syspropertyset>
++                        <propertyref prefix="test-sys-prop."/>
++                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <formatter type="brief" usefile="false"/>
++                    <formatter type="xml"/>
++                    <jvmarg value="-ea"/>
++                    <customize/>
++                </junit>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-junit-init,-init-macrodef-junit-single, -init-macrodef-junit-batch" if="${junit.available}" name="-init-macrodef-junit"/>
++    <target if="${testng.available}" name="-init-macrodef-testng">
++        <macrodef name="testng" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <condition else="" property="testng.methods.arg" value="@{testincludes}.@{testmethods}">
++                    <isset property="test.method"/>
++                </condition>
++                <union id="test.set">
++                    <fileset dir="${test.src.dir}" excludes="@{excludes},**/*.xml,${excludes}" includes="@{includes}">
++                        <filename name="@{testincludes}"/>
++                    </fileset>
++                </union>
++                <taskdef classname="org.testng.TestNGAntTask" classpath="${run.test.classpath}" name="testng"/>
++                <testng classfilesetref="test.set" failureProperty="tests.failed" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="LoLStats" testname="TestNG tests" workingDir="${work.dir}">
++                    <xmlfileset dir="${build.test.classes.dir}" includes="@{testincludes}"/>
++                    <propertyset>
++                        <propertyref prefix="test-sys-prop."/>
++                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                    </propertyset>
++                    <customize/>
++                </testng>
++            </sequential>
++        </macrodef>
++    </target>
++    <target name="-init-macrodef-test-impl">
++        <macrodef name="test-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element implicit="true" name="customize" optional="true"/>
++            <sequential>
++                <echo>No tests executed.</echo>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-junit" if="${junit.available}" name="-init-macrodef-junit-impl">
++        <macrodef name="test-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element implicit="true" name="customize" optional="true"/>
++            <sequential>
++                <j2seproject3:junit excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
++                    <customize/>
++                </j2seproject3:junit>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-testng" if="${testng.available}" name="-init-macrodef-testng-impl">
++        <macrodef name="test-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element implicit="true" name="customize" optional="true"/>
++            <sequential>
++                <j2seproject3:testng excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
++                    <customize/>
++                </j2seproject3:testng>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-test-impl,-init-macrodef-junit-impl,-init-macrodef-testng-impl" name="-init-macrodef-test">
++        <macrodef name="test" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <sequential>
++                <j2seproject3:test-impl excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
++                    <customize>
++                        <classpath>
++                            <path path="${run.test.classpath}"/>
++                        </classpath>
++                        <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
++                        <jvmarg line="${run.jvmargs}"/>
++                        <jvmarg line="${run.jvmargs.ide}"/>
++                    </customize>
++                </j2seproject3:test-impl>
++            </sequential>
++        </macrodef>
++    </target>
++    <target if="${junit.available}" name="-init-macrodef-junit-debug" unless="${nb.junit.batch}">
++        <macrodef name="junit-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property name="junit.forkmode" value="perTest"/>
++                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
++                    <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
++                    <syspropertyset>
++                        <propertyref prefix="test-sys-prop."/>
++                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <formatter type="brief" usefile="false"/>
++                    <formatter type="xml"/>
++                    <jvmarg value="-ea"/>
++                    <jvmarg line="${debug-args-line}"/>
++                    <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
++                    <customize/>
++                </junit>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-test-properties" if="${nb.junit.batch}" name="-init-macrodef-junit-debug-batch">
++        <macrodef name="junit-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property name="junit.forkmode" value="perTest"/>
++                <junit dir="${work.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" forkmode="${junit.forkmode}" showoutput="true" tempdir="${build.dir}">
++                    <batchtest todir="${build.test.results.dir}">
++                        <fileset dir="${test.src.dir}" excludes="@{excludes},${excludes}" includes="@{includes}">
++                            <filename name="@{testincludes}"/>
++                        </fileset>
++                        <fileset dir="${build.test.classes.dir}" excludes="@{excludes},${excludes},${test.binaryexcludes}" includes="${test.binaryincludes}">
++                            <filename name="${test.binarytestincludes}"/>
++                        </fileset>
++                    </batchtest>
++                    <syspropertyset>
++                        <propertyref prefix="test-sys-prop."/>
++                        <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <formatter type="brief" usefile="false"/>
++                    <formatter type="xml"/>
++                    <jvmarg value="-ea"/>
++                    <jvmarg line="${debug-args-line}"/>
++                    <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
++                    <customize/>
++                </junit>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-junit-debug,-init-macrodef-junit-debug-batch" if="${junit.available}" name="-init-macrodef-junit-debug-impl">
++        <macrodef name="test-debug-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <element implicit="true" name="customize" optional="true"/>
++            <sequential>
++                <j2seproject3:junit-debug excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
++                    <customize/>
++                </j2seproject3:junit-debug>
++            </sequential>
++        </macrodef>
++    </target>
++    <target if="${testng.available}" name="-init-macrodef-testng-debug">
++        <macrodef name="testng-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${main.class}" name="testClass"/>
++            <attribute default="" name="testMethod"/>
++            <element name="customize2" optional="true"/>
++            <sequential>
++                <condition else="-testclass @{testClass}" property="test.class.or.method" value="-methods @{testClass}.@{testMethod}">
++                    <isset property="test.method"/>
++                </condition>
++                <condition else="-suitename LoLStats -testname @{testClass} ${test.class.or.method}" property="testng.cmd.args" value="@{testClass}">
++                    <matches pattern=".*\.xml" string="@{testClass}"/>
++                </condition>
++                <delete dir="${build.test.results.dir}" quiet="true"/>
++                <mkdir dir="${build.test.results.dir}"/>
++                <j2seproject3:debug classname="org.testng.TestNG" classpath="${debug.test.classpath}">
++                    <customize>
++                        <customize2/>
++                        <jvmarg value="-ea"/>
++                        <arg line="${testng.debug.mode}"/>
++                        <arg line="-d ${build.test.results.dir}"/>
++                        <arg line="-listener org.testng.reporters.VerboseReporter"/>
++                        <arg line="${testng.cmd.args}"/>
++                    </customize>
++                </j2seproject3:debug>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-testng-debug" if="${testng.available}" name="-init-macrodef-testng-debug-impl">
++        <macrodef name="testng-debug-impl" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${main.class}" name="testClass"/>
++            <attribute default="" name="testMethod"/>
++            <element implicit="true" name="customize2" optional="true"/>
++            <sequential>
++                <j2seproject3:testng-debug testClass="@{testClass}" testMethod="@{testMethod}">
++                    <customize2/>
++                </j2seproject3:testng-debug>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-junit-debug-impl" if="${junit.available}" name="-init-macrodef-test-debug-junit">
++        <macrodef name="test-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <attribute default="${main.class}" name="testClass"/>
++            <attribute default="" name="testMethod"/>
++            <sequential>
++                <j2seproject3:test-debug-impl excludes="@{excludes}" includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
++                    <customize>
++                        <classpath>
++                            <path path="${run.test.classpath}"/>
++                        </classpath>
++                        <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
++                        <jvmarg line="${run.jvmargs}"/>
++                        <jvmarg line="${run.jvmargs.ide}"/>
++                    </customize>
++                </j2seproject3:test-debug-impl>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-testng-debug-impl" if="${testng.available}" name="-init-macrodef-test-debug-testng">
++        <macrodef name="test-debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${includes}" name="includes"/>
++            <attribute default="${excludes}" name="excludes"/>
++            <attribute default="**" name="testincludes"/>
++            <attribute default="" name="testmethods"/>
++            <attribute default="${main.class}" name="testClass"/>
++            <attribute default="" name="testMethod"/>
++            <sequential>
++                <j2seproject3:testng-debug-impl testClass="@{testClass}" testMethod="@{testMethod}">
++                    <customize2>
++                        <syspropertyset>
++                            <propertyref prefix="test-sys-prop."/>
++                            <mapper from="test-sys-prop.*" to="*" type="glob"/>
++                        </syspropertyset>
++                    </customize2>
++                </j2seproject3:testng-debug-impl>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-init-macrodef-test-debug-junit,-init-macrodef-test-debug-testng" name="-init-macrodef-test-debug"/>
++    <!--
++                pre NB7.2 profiling section; consider it deprecated
++            -->
++    <target depends="-profile-pre-init, init, -profile-post-init, -profile-init-macrodef-profile, -profile-init-check" if="profiler.info.jvmargs.agent" name="profile-init"/>
++    <target if="profiler.info.jvmargs.agent" name="-profile-pre-init">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target if="profiler.info.jvmargs.agent" name="-profile-post-init">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target if="profiler.info.jvmargs.agent" name="-profile-init-macrodef-profile">
++        <macrodef name="resolve">
++            <attribute name="name"/>
++            <attribute name="value"/>
++            <sequential>
++                <property name="@{name}" value="${env.@{value}}"/>
++            </sequential>
++        </macrodef>
++        <macrodef name="profile">
++            <attribute default="${main.class}" name="classname"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property environment="env"/>
++                <resolve name="profiler.current.path" value="${profiler.info.pathvar}"/>
++                <java classname="@{classname}" dir="${profiler.info.dir}" fork="true" jvm="${profiler.info.jvm}">
++                    <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
++                    <jvmarg value="${profiler.info.jvmargs.agent}"/>
++                    <jvmarg line="${profiler.info.jvmargs}"/>
++                    <env key="${profiler.info.pathvar}" path="${profiler.info.agentpath}:${profiler.current.path}"/>
++                    <arg line="${application.args}"/>
++                    <classpath>
++                        <path path="${run.classpath}"/>
++                    </classpath>
++                    <syspropertyset>
++                        <propertyref prefix="run-sys-prop."/>
++                        <mapper from="run-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <customize/>
++                </java>
++            </sequential>
++        </macrodef>
++    </target>
++    <target depends="-profile-pre-init, init, -profile-post-init, -profile-init-macrodef-profile" if="profiler.info.jvmargs.agent" name="-profile-init-check">
++        <fail unless="profiler.info.jvm">Must set JVM to use for profiling in profiler.info.jvm</fail>
++        <fail unless="profiler.info.jvmargs.agent">Must set profiler agent JVM arguments in profiler.info.jvmargs.agent</fail>
++    </target>
++    <!--
++                end of pre NB7.2 profiling section
++            -->
++    <target depends="-init-debug-args" name="-init-macrodef-nbjpda">
++        <macrodef name="nbjpdastart" uri="http://www.netbeans.org/ns/j2se-project/1">
++            <attribute default="${main.class}" name="name"/>
++            <attribute default="${debug.classpath}" name="classpath"/>
++            <attribute default="" name="stopclassname"/>
++            <sequential>
++                <nbjpdastart addressproperty="jpda.address" name="@{name}" stopclassname="@{stopclassname}" transport="${debug-transport}">
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                </nbjpdastart>
++            </sequential>
++        </macrodef>
++        <macrodef name="nbjpdareload" uri="http://www.netbeans.org/ns/j2se-project/1">
++            <attribute default="${build.classes.dir}" name="dir"/>
++            <sequential>
++                <nbjpdareload>
++                    <fileset dir="@{dir}" includes="${fix.classes}">
++                        <include name="${fix.includes}*.class"/>
++                    </fileset>
++                </nbjpdareload>
++            </sequential>
++        </macrodef>
++    </target>
++    <target name="-init-debug-args">
++        <property name="version-output" value="java version &quot;${ant.java.version}"/>
++        <condition property="have-jdk-older-than-1.4">
++            <or>
++                <contains string="${version-output}" substring="java version &quot;1.0"/>
++                <contains string="${version-output}" substring="java version &quot;1.1"/>
++                <contains string="${version-output}" substring="java version &quot;1.2"/>
++                <contains string="${version-output}" substring="java version &quot;1.3"/>
++            </or>
++        </condition>
++        <condition else="-Xdebug" property="debug-args-line" value="-Xdebug -Xnoagent -Djava.compiler=none">
++            <istrue value="${have-jdk-older-than-1.4}"/>
++        </condition>
++        <condition else="dt_socket" property="debug-transport-by-os" value="dt_shmem">
++            <os family="windows"/>
++        </condition>
++        <condition else="${debug-transport-by-os}" property="debug-transport" value="${debug.transport}">
++            <isset property="debug.transport"/>
++        </condition>
++    </target>
++    <target depends="-init-debug-args" name="-init-macrodef-debug">
++        <macrodef name="debug" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${main.class}" name="classname"/>
++            <attribute default="${debug.classpath}" name="classpath"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <java classname="@{classname}" dir="${work.dir}" fork="true">
++                    <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
++                    <jvmarg line="${debug-args-line}"/>
++                    <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
++                    <jvmarg value="-Dfile.encoding=${runtime.encoding}"/>
++                    <redirector errorencoding="${runtime.encoding}" inputencoding="${runtime.encoding}" outputencoding="${runtime.encoding}"/>
++                    <jvmarg line="${run.jvmargs}"/>
++                    <jvmarg line="${run.jvmargs.ide}"/>
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                    <syspropertyset>
++                        <propertyref prefix="run-sys-prop."/>
++                        <mapper from="run-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <customize/>
++                </java>
++            </sequential>
++        </macrodef>
++    </target>
++    <target name="-init-macrodef-java">
++        <macrodef name="java" uri="http://www.netbeans.org/ns/j2se-project/1">
++            <attribute default="${main.class}" name="classname"/>
++            <attribute default="${run.classpath}" name="classpath"/>
++            <attribute default="jvm" name="jvm"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <java classname="@{classname}" dir="${work.dir}" fork="true">
++                    <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
++                    <jvmarg value="-Dfile.encoding=${runtime.encoding}"/>
++                    <redirector errorencoding="${runtime.encoding}" inputencoding="${runtime.encoding}" outputencoding="${runtime.encoding}"/>
++                    <jvmarg line="${run.jvmargs}"/>
++                    <jvmarg line="${run.jvmargs.ide}"/>
++                    <classpath>
++                        <path path="@{classpath}"/>
++                    </classpath>
++                    <syspropertyset>
++                        <propertyref prefix="run-sys-prop."/>
++                        <mapper from="run-sys-prop.*" to="*" type="glob"/>
++                    </syspropertyset>
++                    <customize/>
++                </java>
++            </sequential>
++        </macrodef>
++    </target>
++    <target name="-init-macrodef-copylibs">
++        <macrodef name="copylibs" uri="http://www.netbeans.org/ns/j2se-project/3">
++            <attribute default="${manifest.file}" name="manifest"/>
++            <element name="customize" optional="true"/>
++            <sequential>
++                <property location="${build.classes.dir}" name="build.classes.dir.resolved"/>
++                <pathconvert property="run.classpath.without.build.classes.dir">
++                    <path path="${run.classpath}"/>
++                    <map from="${build.classes.dir.resolved}" to=""/>
++                </pathconvert>
++                <pathconvert pathsep=" " property="jar.classpath">
++                    <path path="${run.classpath.without.build.classes.dir}"/>
++                    <chainedmapper>
++                        <flattenmapper/>
++                        <filtermapper>
++                            <replacestring from=" " to="%20"/>
++                        </filtermapper>
++                        <globmapper from="*" to="lib/*"/>
++                    </chainedmapper>
++                </pathconvert>
++                <taskdef classname="org.netbeans.modules.java.j2seproject.copylibstask.CopyLibs" classpath="${libs.CopyLibs.classpath}" name="copylibs"/>
++                <copylibs compress="${jar.compress}" index="${jar.index}" indexMetaInf="${jar.index.metainf}" jarfile="${dist.jar}" manifest="@{manifest}" rebase="${copylibs.rebase}" runtimeclasspath="${run.classpath.without.build.classes.dir}">
++                    <fileset dir="${build.classes.dir}"/>
++                    <manifest>
++                        <attribute name="Class-Path" value="${jar.classpath}"/>
++                        <customize/>
++                    </manifest>
++                </copylibs>
++            </sequential>
++        </macrodef>
++    </target>
++    <target name="-init-presetdef-jar">
++        <presetdef name="jar" uri="http://www.netbeans.org/ns/j2se-project/1">
++            <jar compress="${jar.compress}" index="${jar.index}" jarfile="${dist.jar}">
++                <j2seproject1:fileset dir="${build.classes.dir}"/>
++            </jar>
++        </presetdef>
++    </target>
++    <target name="-init-ap-cmdline-properties">
++        <property name="annotation.processing.enabled" value="true"/>
++        <property name="annotation.processing.processors.list" value=""/>
++        <property name="annotation.processing.processor.options" value=""/>
++        <property name="annotation.processing.run.all.processors" value="true"/>
++        <property name="javac.processorpath" value="${javac.classpath}"/>
++        <property name="javac.test.processorpath" value="${javac.test.classpath}"/>
++        <condition property="ap.supported.internal" value="true">
++            <not>
++                <matches pattern="1\.[0-5](\..*)?" string="${javac.source}"/>
++            </not>
++        </condition>
++    </target>
++    <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-ap-cmdline-supported">
++        <condition else="" property="ap.processors.internal" value="-processor ${annotation.processing.processors.list}">
++            <isfalse value="${annotation.processing.run.all.processors}"/>
++        </condition>
++        <condition else="" property="ap.proc.none.internal" value="-proc:none">
++            <isfalse value="${annotation.processing.enabled}"/>
++        </condition>
++    </target>
++    <target depends="-init-ap-cmdline-properties,-init-ap-cmdline-supported" name="-init-ap-cmdline">
++        <property name="ap.cmd.line.internal" value=""/>
++    </target>
++    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init,-init-check,-init-macrodef-property,-init-macrodef-javac,-init-macrodef-test,-init-macrodef-test-debug,-init-macrodef-nbjpda,-init-macrodef-debug,-init-macrodef-java,-init-presetdef-jar,-init-ap-cmdline" name="init"/>
++    <!--
++                ===================
++                COMPILATION SECTION
++                ===================
++            -->
++    <target name="-deps-jar-init" unless="built-jar.properties">
++        <property location="${build.dir}/built-jar.properties" name="built-jar.properties"/>
++        <delete file="${built-jar.properties}" quiet="true"/>
++    </target>
++    <target if="already.built.jar.${basedir}" name="-warn-already-built-jar">
++        <echo level="warn" message="Cycle detected: LoLStats was already built"/>
++    </target>
++    <target depends="init,-deps-jar-init" name="deps-jar" unless="no.deps">
++        <mkdir dir="${build.dir}"/>
++        <touch file="${built-jar.properties}" verbose="false"/>
++        <property file="${built-jar.properties}" prefix="already.built.jar."/>
++        <antcall target="-warn-already-built-jar"/>
++        <propertyfile file="${built-jar.properties}">
++            <entry key="${basedir}" value=""/>
++        </propertyfile>
++    </target>
++    <target depends="init,-check-automatic-build,-clean-after-automatic-build" name="-verify-automatic-build"/>
++    <target depends="init" name="-check-automatic-build">
++        <available file="${build.classes.dir}/.netbeans_automatic_build" property="netbeans.automatic.build"/>
++    </target>
++    <target depends="init" if="netbeans.automatic.build" name="-clean-after-automatic-build">
++        <antcall target="clean"/>
++    </target>
++    <target depends="init,deps-jar" name="-pre-pre-compile">
++        <mkdir dir="${build.classes.dir}"/>
++    </target>
++    <target name="-pre-compile">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target if="do.depend.true" name="-compile-depend">
++        <pathconvert property="build.generated.subdirs">
++            <dirset dir="${build.generated.sources.dir}" erroronmissingdir="false">
++                <include name="*"/>
++            </dirset>
++        </pathconvert>
++        <j2seproject3:depend srcdir="${src.dir}:${build.generated.subdirs}"/>
++    </target>
++    <target depends="init,deps-jar,-pre-pre-compile,-pre-compile, -copy-persistence-xml,-compile-depend" if="have.sources" name="-do-compile">
++        <j2seproject3:javac gensrcdir="${build.generated.sources.dir}"/>
++        <copy todir="${build.classes.dir}">
++            <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
++        </copy>
++    </target>
++    <target if="has.persistence.xml" name="-copy-persistence-xml">
++        <mkdir dir="${build.classes.dir}/META-INF"/>
++        <copy todir="${build.classes.dir}/META-INF">
++            <fileset dir="${meta.inf.dir}" includes="persistence.xml orm.xml"/>
++        </copy>
++    </target>
++    <target name="-post-compile">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile,-do-compile,-post-compile" description="Compile project." name="compile"/>
++    <target name="-pre-compile-single">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,deps-jar,-pre-pre-compile" name="-do-compile-single">
++        <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
++        <j2seproject3:force-recompile/>
++        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}"/>
++    </target>
++    <target name="-post-compile-single">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile-single,-do-compile-single,-post-compile-single" name="compile-single"/>
++    <!--
++                ====================
++                JAR BUILDING SECTION
++                ====================
++            -->
++    <target depends="init" name="-pre-pre-jar">
++        <dirname file="${dist.jar}" property="dist.jar.dir"/>
++        <mkdir dir="${dist.jar.dir}"/>
++    </target>
++    <target name="-pre-jar">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,compile,-pre-pre-jar,-pre-jar" if="do.archive" name="-do-jar-without-manifest" unless="manifest.available-mkdist.available">
++        <j2seproject1:jar/>
++    </target>
++    <target depends="init,compile,-pre-pre-jar,-pre-jar" if="do.archive+manifest.available" name="-do-jar-with-manifest" unless="manifest.available+main.class-mkdist.available">
++        <j2seproject1:jar manifest="${manifest.file}"/>
++    </target>
++    <target depends="init,compile,-pre-pre-jar,-pre-jar" if="do.archive+manifest.available+main.class" name="-do-jar-with-mainclass" unless="manifest.available+main.class+mkdist.available">
++        <j2seproject1:jar manifest="${manifest.file}">
++            <j2seproject1:manifest>
++                <j2seproject1:attribute name="Main-Class" value="${main.class}"/>
++            </j2seproject1:manifest>
++        </j2seproject1:jar>
++        <echo level="info">To run this application from the command line without Ant, try:</echo>
++        <property location="${build.classes.dir}" name="build.classes.dir.resolved"/>
++        <property location="${dist.jar}" name="dist.jar.resolved"/>
++        <pathconvert property="run.classpath.with.dist.jar">
++            <path path="${run.classpath}"/>
++            <map from="${build.classes.dir.resolved}" to="${dist.jar.resolved}"/>
++        </pathconvert>
++        <echo level="info">java -cp "${run.classpath.with.dist.jar}" ${main.class}</echo>
++    </target>
++    <target depends="init" if="do.archive" name="-do-jar-with-libraries-create-manifest" unless="manifest.available">
++        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
++        <touch file="${tmp.manifest.file}" verbose="false"/>
++    </target>
++    <target depends="init" if="do.archive+manifest.available" name="-do-jar-with-libraries-copy-manifest">
++        <tempfile deleteonexit="true" destdir="${build.dir}" property="tmp.manifest.file"/>
++        <copy file="${manifest.file}" tofile="${tmp.manifest.file}"/>
++    </target>
++    <target depends="init,-do-jar-with-libraries-create-manifest,-do-jar-with-libraries-copy-manifest" if="do.archive+main.class.available" name="-do-jar-with-libraries-set-main">
++        <manifest file="${tmp.manifest.file}" mode="update">
++            <attribute name="Main-Class" value="${main.class}"/>
++        </manifest>
++    </target>
++    <target depends="init,-do-jar-with-libraries-create-manifest,-do-jar-with-libraries-copy-manifest" if="do.archive+splashscreen.available" name="-do-jar-with-libraries-set-splashscreen">
++        <basename file="${application.splash}" property="splashscreen.basename"/>
++        <mkdir dir="${build.classes.dir}/META-INF"/>
++        <copy failonerror="false" file="${application.splash}" todir="${build.classes.dir}/META-INF"/>
++        <manifest file="${tmp.manifest.file}" mode="update">
++            <attribute name="SplashScreen-Image" value="META-INF/${splashscreen.basename}"/>
++        </manifest>
++    </target>
++    <target depends="init,-init-macrodef-copylibs,compile,-pre-pre-jar,-pre-jar,-do-jar-with-libraries-create-manifest,-do-jar-with-libraries-copy-manifest,-do-jar-with-libraries-set-main,-do-jar-with-libraries-set-splashscreen" if="do.mkdist" name="-do-jar-with-libraries-pack">
++        <j2seproject3:copylibs manifest="${tmp.manifest.file}"/>
++        <echo level="info">To run this application from the command line without Ant, try:</echo>
++        <property location="${dist.jar}" name="dist.jar.resolved"/>
++        <echo level="info">java -jar "${dist.jar.resolved}"</echo>
++    </target>
++    <target depends="-do-jar-with-libraries-pack" if="do.archive" name="-do-jar-with-libraries-delete-manifest">
++        <delete>
++            <fileset file="${tmp.manifest.file}"/>
++        </delete>
++    </target>
++    <target depends="init,compile,-pre-pre-jar,-pre-jar,-do-jar-with-libraries-create-manifest,-do-jar-with-libraries-copy-manifest,-do-jar-with-libraries-set-main,-do-jar-with-libraries-set-splashscreen,-do-jar-with-libraries-pack,-do-jar-with-libraries-delete-manifest" name="-do-jar-with-libraries"/>
++    <target name="-post-jar">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,compile,-pre-jar,-do-jar-with-manifest,-do-jar-without-manifest,-do-jar-with-mainclass,-do-jar-with-libraries,-post-jar" description="Build JAR." name="jar"/>
++    <!--
++                =================
++                EXECUTION SECTION
++                =================
++            -->
++    <target depends="init,compile" description="Run a main class." name="run">
++        <j2seproject1:java>
++            <customize>
++                <arg line="${application.args}"/>
++            </customize>
++        </j2seproject1:java>
++    </target>
++    <target name="-do-not-recompile">
++        <property name="javac.includes.binary" value=""/>
++    </target>
++    <target depends="init,compile-single" name="run-single">
++        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
++        <j2seproject1:java classname="${run.class}"/>
++    </target>
++    <target depends="init,compile-test-single" name="run-test-with-main">
++        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
++        <j2seproject1:java classname="${run.class}" classpath="${run.test.classpath}"/>
++    </target>
++    <!--
++                =================
++                DEBUGGING SECTION
++                =================
++            -->
++    <target depends="init" if="netbeans.home" name="-debug-start-debugger">
++        <j2seproject1:nbjpdastart name="${debug.class}"/>
++    </target>
++    <target depends="init" if="netbeans.home" name="-debug-start-debugger-main-test">
++        <j2seproject1:nbjpdastart classpath="${debug.test.classpath}" name="${debug.class}"/>
++    </target>
++    <target depends="init,compile" name="-debug-start-debuggee">
++        <j2seproject3:debug>
++            <customize>
++                <arg line="${application.args}"/>
++            </customize>
++        </j2seproject3:debug>
++    </target>
++    <target depends="init,compile,-debug-start-debugger,-debug-start-debuggee" description="Debug project in IDE." if="netbeans.home" name="debug"/>
++    <target depends="init" if="netbeans.home" name="-debug-start-debugger-stepinto">
++        <j2seproject1:nbjpdastart stopclassname="${main.class}"/>
++    </target>
++    <target depends="init,compile,-debug-start-debugger-stepinto,-debug-start-debuggee" if="netbeans.home" name="debug-stepinto"/>
++    <target depends="init,compile-single" if="netbeans.home" name="-debug-start-debuggee-single">
++        <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
++        <j2seproject3:debug classname="${debug.class}"/>
++    </target>
++    <target depends="init,compile-single,-debug-start-debugger,-debug-start-debuggee-single" if="netbeans.home" name="debug-single"/>
++    <target depends="init,compile-test-single" if="netbeans.home" name="-debug-start-debuggee-main-test">
++        <fail unless="debug.class">Must select one file in the IDE or set debug.class</fail>
++        <j2seproject3:debug classname="${debug.class}" classpath="${debug.test.classpath}"/>
++    </target>
++    <target depends="init,compile-test-single,-debug-start-debugger-main-test,-debug-start-debuggee-main-test" if="netbeans.home" name="debug-test-with-main"/>
++    <target depends="init" name="-pre-debug-fix">
++        <fail unless="fix.includes">Must set fix.includes</fail>
++        <property name="javac.includes" value="${fix.includes}.java"/>
++    </target>
++    <target depends="init,-pre-debug-fix,compile-single" if="netbeans.home" name="-do-debug-fix">
++        <j2seproject1:nbjpdareload/>
++    </target>
++    <target depends="init,-pre-debug-fix,-do-debug-fix" if="netbeans.home" name="debug-fix"/>
++    <!--
++                =================
++                PROFILING SECTION
++                =================
++            -->
++    <!--
++                pre NB7.2 profiler integration
++            -->
++    <target depends="profile-init,compile" description="Profile a project in the IDE." if="profiler.info.jvmargs.agent" name="-profile-pre72">
++        <fail unless="netbeans.home">This target only works when run from inside the NetBeans IDE.</fail>
++        <nbprofiledirect>
++            <classpath>
++                <path path="${run.classpath}"/>
++            </classpath>
++        </nbprofiledirect>
++        <profile/>
++    </target>
++    <target depends="profile-init,compile-single" description="Profile a selected class in the IDE." if="profiler.info.jvmargs.agent" name="-profile-single-pre72">
++        <fail unless="profile.class">Must select one file in the IDE or set profile.class</fail>
++        <fail unless="netbeans.home">This target only works when run from inside the NetBeans IDE.</fail>
++        <nbprofiledirect>
++            <classpath>
++                <path path="${run.classpath}"/>
++            </classpath>
++        </nbprofiledirect>
++        <profile classname="${profile.class}"/>
++    </target>
++    <target depends="profile-init,compile-single" if="profiler.info.jvmargs.agent" name="-profile-applet-pre72">
++        <fail unless="netbeans.home">This target only works when run from inside the NetBeans IDE.</fail>
++        <nbprofiledirect>
++            <classpath>
++                <path path="${run.classpath}"/>
++            </classpath>
++        </nbprofiledirect>
++        <profile classname="sun.applet.AppletViewer">
++            <customize>
++                <arg value="${applet.url}"/>
++            </customize>
++        </profile>
++    </target>
++    <target depends="profile-init,compile-test-single" if="profiler.info.jvmargs.agent" name="-profile-test-single-pre72">
++        <fail unless="netbeans.home">This target only works when run from inside the NetBeans IDE.</fail>
++        <nbprofiledirect>
++            <classpath>
++                <path path="${run.test.classpath}"/>
++            </classpath>
++        </nbprofiledirect>
++        <junit dir="${profiler.info.dir}" errorproperty="tests.failed" failureproperty="tests.failed" fork="true" jvm="${profiler.info.jvm}" showoutput="true">
++            <env key="${profiler.info.pathvar}" path="${profiler.info.agentpath}:${profiler.current.path}"/>
++            <jvmarg value="${profiler.info.jvmargs.agent}"/>
++            <jvmarg line="${profiler.info.jvmargs}"/>
++            <test name="${profile.class}"/>
++            <classpath>
++                <path path="${run.test.classpath}"/>
++            </classpath>
++            <syspropertyset>
++                <propertyref prefix="test-sys-prop."/>
++                <mapper from="test-sys-prop.*" to="*" type="glob"/>
++            </syspropertyset>
++            <formatter type="brief" usefile="false"/>
++            <formatter type="xml"/>
++        </junit>
++    </target>
++    <!--
++                end of pre NB72 profiling section
++            -->
++    <target if="netbeans.home" name="-profile-check">
++        <condition property="profiler.configured">
++            <or>
++                <contains casesensitive="true" string="${run.jvmargs.ide}" substring="-agentpath:"/>
++                <contains casesensitive="true" string="${run.jvmargs.ide}" substring="-javaagent:"/>
++            </or>
++        </condition>
++    </target>
++    <target depends="-profile-check,-profile-pre72" description="Profile a project in the IDE." if="profiler.configured" name="profile" unless="profiler.info.jvmargs.agent">
++        <startprofiler/>
++        <antcall target="run"/>
++    </target>
++    <target depends="-profile-check,-profile-single-pre72" description="Profile a selected class in the IDE." if="profiler.configured" name="profile-single" unless="profiler.info.jvmargs.agent">
++        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
++        <startprofiler/>
++        <antcall target="run-single"/>
++    </target>
++    <target depends="-profile-test-single-pre72" description="Profile a selected test in the IDE." name="profile-test-single"/>
++    <target depends="-profile-check" description="Profile a selected test in the IDE." if="profiler.configured" name="profile-test" unless="profiler.info.jvmargs">
++        <fail unless="test.includes">Must select some files in the IDE or set test.includes</fail>
++        <startprofiler/>
++        <antcall target="test-single"/>
++    </target>
++    <target depends="-profile-check" description="Profile a selected class in the IDE." if="profiler.configured" name="profile-test-with-main">
++        <fail unless="run.class">Must select one file in the IDE or set run.class</fail>
++        <startprofiler/>
++        <antcal target="run-test-with-main"/>
++    </target>
++    <target depends="-profile-check,-profile-applet-pre72" if="profiler.configured" name="profile-applet" unless="profiler.info.jvmargs.agent">
++        <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
++        <startprofiler/>
++        <antcall target="run-applet"/>
++    </target>
++    <!--
++                ===============
++                JAVADOC SECTION
++                ===============
++            -->
++    <target depends="init" if="have.sources" name="-javadoc-build">
++        <mkdir dir="${dist.javadoc.dir}"/>
++        <condition else="" property="javadoc.endorsed.classpath.cmd.line.arg" value="-J${endorsed.classpath.cmd.line.arg}">
++            <and>
++                <isset property="endorsed.classpath.cmd.line.arg"/>
++                <not>
++                    <equals arg1="${endorsed.classpath.cmd.line.arg}" arg2=""/>
++                </not>
++            </and>
++        </condition>
++        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
++            <classpath>
++                <path path="${javac.classpath}"/>
++            </classpath>
++            <fileset dir="${src.dir}" excludes="*.java,${excludes}" includes="${includes}">
++                <filename name="**/*.java"/>
++            </fileset>
++            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
++                <include name="**/*.java"/>
++                <exclude name="*.java"/>
++            </fileset>
++            <arg line="${javadoc.endorsed.classpath.cmd.line.arg}"/>
++        </javadoc>
++        <copy todir="${dist.javadoc.dir}">
++            <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
++                <filename name="**/doc-files/**"/>
++            </fileset>
++            <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
++                <include name="**/doc-files/**"/>
++            </fileset>
++        </copy>
++    </target>
++    <target depends="init,-javadoc-build" if="netbeans.home" name="-javadoc-browse" unless="no.javadoc.preview">
++        <nbbrowse file="${dist.javadoc.dir}/index.html"/>
++    </target>
++    <target depends="init,-javadoc-build,-javadoc-browse" description="Build Javadoc." name="javadoc"/>
++    <!--
++                =========================
++                TEST COMPILATION SECTION
++                =========================
++            -->
++    <target depends="init,compile" if="have.tests" name="-pre-pre-compile-test">
++        <mkdir dir="${build.test.classes.dir}"/>
++    </target>
++    <target name="-pre-compile-test">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target if="do.depend.true" name="-compile-test-depend">
++        <j2seproject3:depend classpath="${javac.test.classpath}" destdir="${build.test.classes.dir}" srcdir="${test.src.dir}"/>
++    </target>
++    <target depends="init,deps-jar,compile,-pre-pre-compile-test,-pre-compile-test,-compile-test-depend" if="have.tests" name="-do-compile-test">
++        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" processorpath="${javac.test.processorpath}" srcdir="${test.src.dir}"/>
++        <copy todir="${build.test.classes.dir}">
++            <fileset dir="${test.src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
++        </copy>
++    </target>
++    <target name="-post-compile-test">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,compile,-pre-pre-compile-test,-pre-compile-test,-do-compile-test,-post-compile-test" name="compile-test"/>
++    <target name="-pre-compile-test-single">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,deps-jar,compile,-pre-pre-compile-test,-pre-compile-test-single" if="have.tests" name="-do-compile-test-single">
++        <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
++        <j2seproject3:force-recompile destdir="${build.test.classes.dir}"/>
++        <j2seproject3:javac apgeneratedsrcdir="${build.test.classes.dir}" classpath="${javac.test.classpath}" debug="true" destdir="${build.test.classes.dir}" excludes="" includes="${javac.includes}" processorpath="${javac.test.processorpath}" sourcepath="${test.src.dir}" srcdir="${test.src.dir}"/>
++        <copy todir="${build.test.classes.dir}">
++            <fileset dir="${test.src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
++        </copy>
++    </target>
++    <target name="-post-compile-test-single">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,compile,-pre-pre-compile-test,-pre-compile-test-single,-do-compile-test-single,-post-compile-test-single" name="compile-test-single"/>
++    <!--
++                =======================
++                TEST EXECUTION SECTION
++                =======================
++            -->
++    <target depends="init" if="have.tests" name="-pre-test-run">
++        <mkdir dir="${build.test.results.dir}"/>
++    </target>
++    <target depends="init,compile-test,-pre-test-run" if="have.tests" name="-do-test-run">
++        <j2seproject3:test testincludes="**/*Test.java"/>
++    </target>
++    <target depends="init,compile-test,-pre-test-run,-do-test-run" if="have.tests" name="-post-test-run">
++        <fail if="tests.failed" unless="ignore.failing.tests">Some tests failed; see details above.</fail>
++    </target>
++    <target depends="init" if="have.tests" name="test-report"/>
++    <target depends="init" if="netbeans.home+have.tests" name="-test-browse"/>
++    <target depends="init,compile-test,-pre-test-run,-do-test-run,test-report,-post-test-run,-test-browse" description="Run unit tests." name="test"/>
++    <target depends="init" if="have.tests" name="-pre-test-run-single">
++        <mkdir dir="${build.test.results.dir}"/>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-do-test-run-single">
++        <fail unless="test.includes">Must select some files in the IDE or set test.includes</fail>
++        <j2seproject3:test excludes="" includes="${test.includes}" testincludes="${test.includes}"/>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single,-do-test-run-single" if="have.tests" name="-post-test-run-single">
++        <fail if="tests.failed" unless="ignore.failing.tests">Some tests failed; see details above.</fail>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single,-do-test-run-single,-post-test-run-single" description="Run single unit test." name="test-single"/>
++    <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-do-test-run-single-method">
++        <fail unless="test.class">Must select some files in the IDE or set test.class</fail>
++        <fail unless="test.method">Must select some method in the IDE or set test.method</fail>
++        <j2seproject3:test excludes="" includes="${javac.includes}" testincludes="${test.class}" testmethods="${test.method}"/>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single,-do-test-run-single-method" if="have.tests" name="-post-test-run-single-method">
++        <fail if="tests.failed" unless="ignore.failing.tests">Some tests failed; see details above.</fail>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single,-do-test-run-single-method,-post-test-run-single-method" description="Run single unit test." name="test-single-method"/>
++    <!--
++                =======================
++                TEST DEBUGGING SECTION
++                =======================
++            -->
++    <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-debug-start-debuggee-test">
++        <fail unless="test.class">Must select one file in the IDE or set test.class</fail>
++        <j2seproject3:test-debug excludes="" includes="${javac.includes}" testClass="${test.class}" testincludes="${javac.includes}"/>
++    </target>
++    <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-debug-start-debuggee-test-method">
++        <fail unless="test.class">Must select one file in the IDE or set test.class</fail>
++        <fail unless="test.method">Must select some method in the IDE or set test.method</fail>
++        <j2seproject3:test-debug excludes="" includes="${javac.includes}" testClass="${test.class}" testMethod="${test.method}" testincludes="${test.class}" testmethods="${test.method}"/>
++    </target>
++    <target depends="init,compile-test" if="netbeans.home+have.tests" name="-debug-start-debugger-test">
++        <j2seproject1:nbjpdastart classpath="${debug.test.classpath}" name="${test.class}"/>
++    </target>
++    <target depends="init,compile-test-single,-debug-start-debugger-test,-debug-start-debuggee-test" name="debug-test"/>
++    <target depends="init,compile-test-single,-debug-start-debugger-test,-debug-start-debuggee-test-method" name="debug-test-method"/>
++    <target depends="init,-pre-debug-fix,compile-test-single" if="netbeans.home" name="-do-debug-fix-test">
++        <j2seproject1:nbjpdareload dir="${build.test.classes.dir}"/>
++    </target>
++    <target depends="init,-pre-debug-fix,-do-debug-fix-test" if="netbeans.home" name="debug-fix-test"/>
++    <!--
++                =========================
++                APPLET EXECUTION SECTION
++                =========================
++            -->
++    <target depends="init,compile-single" name="run-applet">
++        <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
++        <j2seproject1:java classname="sun.applet.AppletViewer">
++            <customize>
++                <arg value="${applet.url}"/>
++            </customize>
++        </j2seproject1:java>
++    </target>
++    <!--
++                =========================
++                APPLET DEBUGGING  SECTION
++                =========================
++            -->
++    <target depends="init,compile-single" if="netbeans.home" name="-debug-start-debuggee-applet">
++        <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
++        <j2seproject3:debug classname="sun.applet.AppletViewer">
++            <customize>
++                <arg value="${applet.url}"/>
++            </customize>
++        </j2seproject3:debug>
++    </target>
++    <target depends="init,compile-single,-debug-start-debugger,-debug-start-debuggee-applet" if="netbeans.home" name="debug-applet"/>
++    <!--
++                ===============
++                CLEANUP SECTION
++                ===============
++            -->
++    <target name="-deps-clean-init" unless="built-clean.properties">
++        <property location="${build.dir}/built-clean.properties" name="built-clean.properties"/>
++        <delete file="${built-clean.properties}" quiet="true"/>
++    </target>
++    <target if="already.built.clean.${basedir}" name="-warn-already-built-clean">
++        <echo level="warn" message="Cycle detected: LoLStats was already built"/>
++    </target>
++    <target depends="init,-deps-clean-init" name="deps-clean" unless="no.deps">
++        <mkdir dir="${build.dir}"/>
++        <touch file="${built-clean.properties}" verbose="false"/>
++        <property file="${built-clean.properties}" prefix="already.built.clean."/>
++        <antcall target="-warn-already-built-clean"/>
++        <propertyfile file="${built-clean.properties}">
++            <entry key="${basedir}" value=""/>
++        </propertyfile>
++    </target>
++    <target depends="init" name="-do-clean">
++        <delete dir="${build.dir}"/>
++        <delete dir="${dist.dir}" followsymlinks="false" includeemptydirs="true"/>
++    </target>
++    <target name="-post-clean">
++        <!-- Empty placeholder for easier customization. -->
++        <!-- You can override this target in the ../build.xml file. -->
++    </target>
++    <target depends="init,deps-clean,-do-clean,-post-clean" description="Clean build products." name="clean"/>
++    <target name="-check-call-dep">
++        <property file="${call.built.properties}" prefix="already.built."/>
++        <condition property="should.call.dep">
++            <and>
++                <not>
++                    <isset property="already.built.${call.subproject}"/>
++                </not>
++                <available file="${call.script}"/>
++            </and>
++        </condition>
++    </target>
++    <target depends="-check-call-dep" if="should.call.dep" name="-maybe-call-dep">
++        <ant antfile="${call.script}" inheritall="false" target="${call.target}">
++            <propertyset>
++                <propertyref prefix="transfer."/>
++                <mapper from="transfer.*" to="*" type="glob"/>
++            </propertyset>
++        </ant>
++    </target>
++</project>
+diff --git a/nbproject/genfiles.properties b/nbproject/genfiles.properties
+new file mode 100644
+index 0000000..88ef922
+--- /dev/null
++++ b/nbproject/genfiles.properties
+@@ -0,0 +1,8 @@
++build.xml.data.CRC32=f4e4bda6
++build.xml.script.CRC32=87a7efb6
++build.xml.stylesheet.CRC32=28e38971@1.56.1.46
++# This file is used by a NetBeans-based IDE to track changes in generated files such as build-impl.xml.
++# Do not edit this file. You may delete it but then the IDE will never regenerate such files for you.
++nbproject/build-impl.xml.data.CRC32=f4e4bda6
++nbproject/build-impl.xml.script.CRC32=84eb3c5e
++nbproject/build-impl.xml.stylesheet.CRC32=c6d2a60f@1.56.1.46
+diff --git a/nbproject/private/config.properties b/nbproject/private/config.properties
+new file mode 100644
+index 0000000..e69de29
+--- /dev/null
++++ b/nbproject/private/config.properties
+diff --git a/nbproject/private/private.properties b/nbproject/private/private.properties
+new file mode 100644
+index 0000000..527f3ce
+--- /dev/null
++++ b/nbproject/private/private.properties
+@@ -0,0 +1,6 @@
++compile.on.save=false
++do.depend=false
++do.jar=true
++javac.debug=true
++javadoc.preview=true
++user.properties.file=Z:\\Users\\Matthew\\AppData\\Roaming\\NetBeans\\7.3\\build.properties
+diff --git a/nbproject/private/private.xml b/nbproject/private/private.xml
+new file mode 100644
+index 0000000..4750962
+--- /dev/null
++++ b/nbproject/private/private.xml
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
++    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
++</project-private>
+diff --git a/nbproject/project.properties b/nbproject/project.properties
+new file mode 100644
+index 0000000..0cc3828
+--- /dev/null
++++ b/nbproject/project.properties
+@@ -0,0 +1,84 @@
++annotation.processing.enabled=true
++annotation.processing.enabled.in.editor=false
++annotation.processing.processors.list=
++annotation.processing.run.all.processors=true
++annotation.processing.source.output=${build.generated.sources.dir}/ap-source-output
++application.title=LoLStats
++application.vendor=Matthew
++build.classes.dir=${build.dir}/classes
++build.classes.excludes=**/*.java,**/*.form
++# This directory is removed when the project is cleaned:
++build.dir=build
++build.generated.dir=${build.dir}/generated
++build.generated.sources.dir=${build.dir}/generated-sources
++# Only compile against the classpath explicitly listed here:
++build.sysclasspath=ignore
++build.test.classes.dir=${build.dir}/test/classes
++build.test.results.dir=${build.dir}/test/results
++# Uncomment to specify the preferred debugger connection transport:
++#debug.transport=dt_socket
++debug.classpath=\
++    ${run.classpath}
++debug.test.classpath=\
++    ${run.test.classpath}
++# This directory is removed when the project is cleaned:
++dist.dir=dist
++dist.jar=${dist.dir}/LoLStats.jar
++dist.javadoc.dir=${dist.dir}/javadoc
++endorsed.classpath=
++excludes=
++file.reference.commons-io-2.4.jar=Z:\\Program Files\\Java\\JDK\\bin\\commons-io-2.4\\commons-io-2.4.jar
++file.reference.jcalendar-1.4.jar=Z:\\Program Files\\Java\\JDK\\bin\\jcalendar-1.4\\lib\\jcalendar-1.4.jar
++file.reference.joda-time-2.2.jar=Z:\\Program Files\\Java\\JDK\\bin\\joda-time-2.2-dist\\joda-time-2.2\\joda-time-2.2.jar
++file.reference.opencsv-2.3.jar=Z:\\Program Files\\Java\\JDK\\bin\\opencsv-2.3.jar
++file.reference.xstream-1.4.4.jar=Z:\\Program Files\\Java\\JDK\\bin\\xstream-distribution-1.4.4-bin\\xstream-1.4.4\\lib\\xstream-1.4.4.jar
++includes=**
++jar.compress=false
++javac.classpath=\
++    ${file.reference.opencsv-2.3.jar}:\
++    ${libs.beans-binding.classpath}:\
++    ${file.reference.xstream-1.4.4.jar}:\
++    ${file.reference.commons-io-2.4.jar}:\
++    ${file.reference.joda-time-2.2.jar}:\
++    ${file.reference.jcalendar-1.4.jar}
++# Space-separated list of extra javac options
++javac.compilerargs=
++javac.deprecation=false
++javac.processorpath=\
++    ${javac.classpath}
++javac.source=1.7
++javac.target=1.7
++javac.test.classpath=\
++    ${javac.classpath}:\
++    ${build.classes.dir}
++javac.test.processorpath=\
++    ${javac.test.classpath}
++javadoc.additionalparam=
++javadoc.author=false
++javadoc.encoding=${source.encoding}
++javadoc.noindex=false
++javadoc.nonavbar=false
++javadoc.notree=false
++javadoc.private=false
++javadoc.splitindex=true
++javadoc.use=true
++javadoc.version=false
++javadoc.windowtitle=
++main.class=LoLStats.LolStats
++manifest.file=manifest.mf
++meta.inf.dir=${src.dir}/META-INF
++mkdist.disabled=false
++platform.active=default_platform
++run.classpath=\
++    ${javac.classpath}:\
++    ${build.classes.dir}
++# Space-separated list of JVM arguments used when running the project.
++# You may also define separate properties like run-sys-prop.name=value instead of -Dname=value.
++# To set system properties for unit tests define test-sys-prop.name=value:
++run.jvmargs=
++run.test.classpath=\
++    ${javac.test.classpath}:\
++    ${build.test.classes.dir}
++source.encoding=UTF-8
++src.dir=src
++test.src.dir=test
+diff --git a/nbproject/project.xml b/nbproject/project.xml
+new file mode 100644
+index 0000000..47e1988
+--- /dev/null
++++ b/nbproject/project.xml
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://www.netbeans.org/ns/project/1">
++    <type>org.netbeans.modules.java.j2seproject</type>
++    <configuration>
++        <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
++            <name>LoLStats</name>
++            <source-roots>
++                <root id="src.dir"/>
++            </source-roots>
++            <test-roots>
++                <root id="test.src.dir"/>
++            </test-roots>
++        </data>
++    </configuration>
++</project>
+diff --git a/records.xml b/records.xml
+new file mode 100644
+index 0000000..cc17646
+--- /dev/null
++++ b/records.xml
+@@ -0,0 +1,3 @@
++<set>
++
++</set>
+\ No newline at end of file
+diff --git a/src/LoLStats/LolStats.form b/src/LoLStats/LolStats.form
+new file mode 100644
+index 0000000..b0ccbdc
+--- /dev/null
++++ b/src/LoLStats/LolStats.form
+@@ -0,0 +1,586 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++
++<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
++  <Properties>
++    <Property name="defaultCloseOperation" type="int" value="3"/>
++  </Properties>
++  <SyntheticProperties>
++    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
++    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
++  </SyntheticProperties>
++  <AuxValues>
++    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
++    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
++    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
++    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
++    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
++    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
++    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
++    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
++    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
++  </AuxValues>
++
++  <Layout>
++    <DimensionLayout dim="0">
++      <Group type="103" groupAlignment="0" attributes="0">
++          <Group type="102" attributes="0">
++              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++              <Component id="tabPane" min="-2" pref="504" max="-2" attributes="0"/>
++          </Group>
++      </Group>
++    </DimensionLayout>
++    <DimensionLayout dim="1">
++      <Group type="103" groupAlignment="0" attributes="0">
++          <Component id="tabPane" max="32767" attributes="0"/>
++      </Group>
++    </DimensionLayout>
++  </Layout>
++  <SubComponents>
++    <Container class="javax.swing.JTabbedPane" name="tabPane">
++
++      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
++      <SubComponents>
++        <Container class="javax.swing.JPanel" name="inputTab">
++          <Constraints>
++            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
++              <JTabbedPaneConstraints tabName="Input Stats">
++                <Property name="tabTitle" type="java.lang.String" value="Input Stats"/>
++              </JTabbedPaneConstraints>
++            </Constraint>
++          </Constraints>
++
++          <Layout>
++            <DimensionLayout dim="0">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <Group type="102" alignment="0" attributes="0">
++                      <Component id="jPanel6" max="32767" attributes="0"/>
++                      <EmptySpace max="-2" attributes="0"/>
++                  </Group>
++              </Group>
++            </DimensionLayout>
++            <DimensionLayout dim="1">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <Group type="102" alignment="0" attributes="0">
++                      <EmptySpace max="-2" attributes="0"/>
++                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
++                      <EmptySpace max="32767" attributes="0"/>
++                  </Group>
++              </Group>
++            </DimensionLayout>
++          </Layout>
++          <SubComponents>
++            <Container class="javax.swing.JPanel" name="jPanel6">
++
++              <Layout>
++                <DimensionLayout dim="0">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Group type="102" attributes="0">
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="2" attributes="0">
++                              <Component id="positionPanel" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="jPanel2" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="jPanel3" alignment="2" min="-2" pref="224" max="-2" attributes="0"/>
++                              <Component id="submitButton" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="jPanel4" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="jPanel5" alignment="2" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="2" attributes="0">
++                              <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="dayText" alignment="2" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="2" attributes="0">
++                              <Component id="jLabel2" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="monthText" alignment="2" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Group type="103" groupAlignment="2" attributes="0">
++                              <Component id="jLabel3" alignment="2" min="-2" max="-2" attributes="0"/>
++                              <Component id="yearText" alignment="2" min="-2" max="-2" attributes="0"/>
++                          </Group>
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Component id="dateButton" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace pref="14" max="32767" attributes="0"/>
++                      </Group>
++                  </Group>
++                </DimensionLayout>
++                <DimensionLayout dim="1">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <Group type="102" attributes="0">
++                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
++                              <Group type="102" attributes="0">
++                                  <EmptySpace max="-2" attributes="0"/>
++                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <Group type="102" alignment="1" attributes="0">
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                                  <EmptySpace max="32767" attributes="0"/>
++                                  <Group type="103" groupAlignment="3" attributes="0">
++                                      <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="dayText" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="dateButton" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="monthText" alignment="3" min="-2" max="-2" attributes="0"/>
++                                      <Component id="yearText" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  </Group>
++                              </Group>
++                          </Group>
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
++                          <Component id="jPanel5" min="-2" pref="52" max="-2" attributes="0"/>
++                          <EmptySpace type="separate" max="-2" attributes="0"/>
++                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace pref="33" max="32767" attributes="0"/>
++                          <Component id="positionPanel" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace max="-2" attributes="0"/>
++                          <Component id="submitButton" min="-2" max="-2" attributes="0"/>
++                          <EmptySpace max="-2" attributes="0"/>
++                      </Group>
++                  </Group>
++                </DimensionLayout>
++              </Layout>
++              <SubComponents>
++                <Container class="javax.swing.JPanel" name="jPanel3">
++
++                  <Layout>
++                    <DimensionLayout dim="0">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" attributes="0">
++                              <EmptySpace max="32767" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="killsField" min="-2" pref="56" max="-2" attributes="0"/>
++                                  <Component id="killsLabel" min="-2" pref="56" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace type="separate" max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="deathsField" min="-2" pref="56" max="-2" attributes="0"/>
++                                  <Component id="deathsLabel" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace type="separate" max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="assistsField" min="-2" pref="56" max="-2" attributes="0"/>
++                                  <Component id="assistsLabel" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                    <DimensionLayout dim="1">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="0" attributes="0">
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="killsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="deathsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="assistsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="killsField" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="deathsField" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="assistsField" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                  </Layout>
++                  <SubComponents>
++                    <Component class="javax.swing.JLabel" name="deathsLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Deaths"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JLabel" name="assistsLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Assists"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JTextField" name="killsField">
++                      <Events>
++                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="killsFieldActionPerformed"/>
++                      </Events>
++                    </Component>
++                    <Component class="javax.swing.JLabel" name="killsLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Kills"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JTextField" name="deathsField">
++                    </Component>
++                    <Component class="javax.swing.JTextField" name="assistsField">
++                      <Events>
++                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assistsFieldActionPerformed"/>
++                      </Events>
++                    </Component>
++                  </SubComponents>
++                </Container>
++                <Container class="javax.swing.JPanel" name="jPanel2">
++
++                  <Layout>
++                    <DimensionLayout dim="0">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="1" attributes="0">
++                              <Component id="champLabel" min="-2" max="-2" attributes="0"/>
++                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                              <Component id="championCombo" pref="138" max="32767" attributes="0"/>
++                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                    <DimensionLayout dim="1">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" attributes="0">
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="champLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="championCombo" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace max="32767" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                  </Layout>
++                  <SubComponents>
++                    <Component class="javax.swing.JLabel" name="champLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Select champion:"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JComboBox" name="championCombo">
++                      <Properties>
++                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
++                          <StringArray count="4">
++                            <StringItem index="0" value="Item 1"/>
++                            <StringItem index="1" value="Item 2"/>
++                            <StringItem index="2" value="Item 3"/>
++                            <StringItem index="3" value="Item 4"/>
++                          </StringArray>
++                        </Property>
++                      </Properties>
++                    </Component>
++                  </SubComponents>
++                </Container>
++                <Container class="javax.swing.JPanel" name="jPanel4">
++
++                  <Layout>
++                    <DimensionLayout dim="0">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" attributes="0">
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="lossButton" alignment="0" min="-2" max="-2" attributes="0"/>
++                                  <Component id="winButton" alignment="0" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace pref="14" max="32767" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="rankedGameTypeButton" min="-2" max="-2" attributes="0"/>
++                                  <Component id="normalGameTypeButton" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace max="-2" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                    <DimensionLayout dim="1">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="0" attributes="0">
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="winButton" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="rankedGameTypeButton" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace max="32767" attributes="0"/>
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="lossButton" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="normalGameTypeButton" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                  </Layout>
++                  <SubComponents>
++                    <Component class="javax.swing.JRadioButton" name="lossButton">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Loss"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JRadioButton" name="winButton">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Win"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JRadioButton" name="normalGameTypeButton">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Normal"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JRadioButton" name="rankedGameTypeButton">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Ranked"/>
++                      </Properties>
++                    </Component>
++                  </SubComponents>
++                </Container>
++                <Container class="javax.swing.JPanel" name="jPanel5">
++
++                  <Layout>
++                    <DimensionLayout dim="0">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="0" attributes="0">
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="1" attributes="0">
++                                  <Component id="goldLabel" min="-2" max="-2" attributes="0"/>
++                                  <Component id="goldField" min="-2" pref="56" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="0" attributes="0">
++                                  <Component id="csLabel" min="-2" max="-2" attributes="0"/>
++                                  <Component id="csField" min="-2" pref="60" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace max="32767" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                    <DimensionLayout dim="1">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" attributes="0">
++                              <EmptySpace max="32767" attributes="0"/>
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="goldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="csLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="goldField" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="csField" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                  </Layout>
++                  <SubComponents>
++                    <Component class="javax.swing.JTextField" name="goldField">
++                    </Component>
++                    <Component class="javax.swing.JLabel" name="goldLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Gold Earned"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JLabel" name="csLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Minion Kills"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JTextField" name="csField">
++                    </Component>
++                  </SubComponents>
++                </Container>
++                <Component class="javax.swing.JButton" name="submitButton">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Submit"/>
++                  </Properties>
++                  <Events>
++                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
++                  </Events>
++                </Component>
++                <Container class="javax.swing.JPanel" name="positionPanel">
++
++                  <Layout>
++                    <DimensionLayout dim="0">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="0" attributes="0">
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Component id="positionLabel" min="-2" max="-2" attributes="0"/>
++                              <EmptySpace type="separate" max="-2" attributes="0"/>
++                              <Component id="positionCombo" min="-2" max="-2" attributes="0"/>
++                              <EmptySpace pref="42" max="32767" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                    <DimensionLayout dim="1">
++                      <Group type="103" groupAlignment="0" attributes="0">
++                          <Group type="102" alignment="0" attributes="0">
++                              <EmptySpace max="-2" attributes="0"/>
++                              <Group type="103" groupAlignment="3" attributes="0">
++                                  <Component id="positionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
++                                  <Component id="positionCombo" alignment="3" min="-2" max="-2" attributes="0"/>
++                              </Group>
++                              <EmptySpace pref="18" max="32767" attributes="0"/>
++                          </Group>
++                      </Group>
++                    </DimensionLayout>
++                  </Layout>
++                  <SubComponents>
++                    <Component class="javax.swing.JLabel" name="positionLabel">
++                      <Properties>
++                        <Property name="text" type="java.lang.String" value="Position"/>
++                      </Properties>
++                    </Component>
++                    <Component class="javax.swing.JComboBox" name="positionCombo">
++                      <Properties>
++                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
++                          <StringArray count="4">
++                            <StringItem index="0" value="Item 1"/>
++                            <StringItem index="1" value="Item 2"/>
++                            <StringItem index="2" value="Item 3"/>
++                            <StringItem index="3" value="Item 4"/>
++                          </StringArray>
++                        </Property>
++                      </Properties>
++                    </Component>
++                  </SubComponents>
++                </Container>
++                <Component class="javax.swing.JLabel" name="dateLabel">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Date:"/>
++                  </Properties>
++                </Component>
++                <Component class="javax.swing.JTextField" name="dayText">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Date"/>
++                  </Properties>
++                  <Events>
++                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dayTextActionPerformed"/>
++                  </Events>
++                </Component>
++                <Component class="javax.swing.JButton" name="dateButton">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Today"/>
++                  </Properties>
++                  <Events>
++                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dateButtonActionPerformed"/>
++                  </Events>
++                </Component>
++                <Component class="javax.swing.JTextField" name="monthText">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Date"/>
++                  </Properties>
++                </Component>
++                <Component class="javax.swing.JTextField" name="yearText">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="Date"/>
++                  </Properties>
++                </Component>
++                <Component class="javax.swing.JLabel" name="jLabel1">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="dd"/>
++                  </Properties>
++                </Component>
++                <Component class="javax.swing.JLabel" name="jLabel2">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="mm"/>
++                  </Properties>
++                </Component>
++                <Component class="javax.swing.JLabel" name="jLabel3">
++                  <Properties>
++                    <Property name="text" type="java.lang.String" value="yyyy"/>
++                  </Properties>
++                </Component>
++              </SubComponents>
++            </Container>
++          </SubComponents>
++        </Container>
++        <Container class="javax.swing.JPanel" name="listTab">
++          <Constraints>
++            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
++              <JTabbedPaneConstraints tabName="Record List">
++                <Property name="tabTitle" type="java.lang.String" value="Record List"/>
++              </JTabbedPaneConstraints>
++            </Constraint>
++          </Constraints>
++
++          <Layout>
++            <DimensionLayout dim="0">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <Group type="102" alignment="1" attributes="0">
++                      <EmptySpace max="-2" attributes="0"/>
++                      <Group type="103" groupAlignment="1" attributes="0">
++                          <Component id="jScrollPane1" pref="479" max="32767" attributes="0"/>
++                          <Component id="jPanel1" max="32767" attributes="0"/>
++                      </Group>
++                      <EmptySpace max="-2" attributes="0"/>
++                  </Group>
++              </Group>
++            </DimensionLayout>
++            <DimensionLayout dim="1">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <Group type="102" alignment="0" attributes="0">
++                      <EmptySpace max="-2" attributes="0"/>
++                      <Component id="jScrollPane1" pref="273" max="32767" attributes="0"/>
++                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
++                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
++                      <EmptySpace max="-2" attributes="0"/>
++                  </Group>
++              </Group>
++            </DimensionLayout>
++          </Layout>
++          <SubComponents>
++            <Container class="javax.swing.JPanel" name="jPanel1">
++
++              <Layout>
++                <DimensionLayout dim="0">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
++                  </Group>
++                </DimensionLayout>
++                <DimensionLayout dim="1">
++                  <Group type="103" groupAlignment="0" attributes="0">
++                      <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
++                  </Group>
++                </DimensionLayout>
++              </Layout>
++            </Container>
++            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
++              <AuxValues>
++                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
++              </AuxValues>
++
++              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
++              <SubComponents>
++                <Component class="javax.swing.JList" name="recordJList">
++                  <Properties>
++                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
++                      <StringArray count="5">
++                        <StringItem index="0" value="Item 1"/>
++                        <StringItem index="1" value="Item 2"/>
++                        <StringItem index="2" value="Item 3"/>
++                        <StringItem index="3" value="Item 4"/>
++                        <StringItem index="4" value="Item 5"/>
++                      </StringArray>
++                    </Property>
++                  </Properties>
++                </Component>
++              </SubComponents>
++            </Container>
++          </SubComponents>
++        </Container>
++        <Container class="javax.swing.JPanel" name="graphTab">
++          <Constraints>
++            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
++              <JTabbedPaneConstraints tabName="Stats">
++                <Property name="tabTitle" type="java.lang.String" value="Stats"/>
++              </JTabbedPaneConstraints>
++            </Constraint>
++          </Constraints>
++
++          <Layout>
++            <DimensionLayout dim="0">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <EmptySpace min="0" pref="499" max="32767" attributes="0"/>
++              </Group>
++            </DimensionLayout>
++            <DimensionLayout dim="1">
++              <Group type="103" groupAlignment="0" attributes="0">
++                  <EmptySpace min="0" pref="356" max="32767" attributes="0"/>
++              </Group>
++            </DimensionLayout>
++          </Layout>
++        </Container>
++      </SubComponents>
++    </Container>
++  </SubComponents>
++</Form>
+diff --git a/src/LoLStats/LolStats.java b/src/LoLStats/LolStats.java
+new file mode 100644
+index 0000000..85b4456
+--- /dev/null
++++ b/src/LoLStats/LolStats.java
+@@ -0,0 +1,681 @@
++package LoLStats;
++
++
++import au.com.bytecode.opencsv.CSVReader;
++import com.thoughtworks.xstream.XStream;
++import com.thoughtworks.xstream.io.xml.DomDriver;
++import java.io.File;
++import java.io.FileInputStream;
++import java.io.FileNotFoundException;
++import java.io.FileReader;
++import java.io.IOException;
++import java.io.InputStream;
++import java.io.OutputStream;
++import java.util.ArrayList;
++import java.util.Iterator;
++import java.util.List;
++import java.util.Set;
++import java.util.Vector;
++import javax.swing.ButtonGroup;
++import javax.swing.DefaultComboBoxModel;
++import javax.swing.DefaultListModel;
++import javax.swing.JList;
++import org.apache.commons.io.FileUtils;
++import org.apache.commons.io.IOUtils;
++import org.joda.time.LocalDate;
++
++/*
++ * To change this template, choose Tools | Templates
++ * and open the template in the editor.
++ */
++
++/**
++ *
++ * @author Matthew
++ */
++public class LolStats extends javax.swing.JFrame {
++    
++    private final String[] POSITIONS = {"Top", "Mid", "Jungle", "ADC", "Support"};
++    private Set<MatchRecord> recordSet;
++    DefaultListModel listModel;
++    
++    /**
++     * Creates new form LolStats
++     */
++    public LolStats() {
++        
++        initComponents();
++        populateComboBoxes();
++        createButtonGroups();
++        loadRecords();
++        resetDate();
++    }
++    
++    private void resetDate(){
++        LocalDate ld = new LocalDate();
++        String day = ld.toString("dd");
++        String month = ld.toString("MM");
++        String year = ld.toString("yyyy");
++        
++        dayText.setText(day);
++        monthText.setText(month);
++        yearText.setText(year);
++    }
++    
++    private void loadRecords(){
++        //Get the set of records from the xml file
++        try{
++            XStream xstream = new XStream(new DomDriver());
++            InputStream is = new FileInputStream("records.xml");
++            recordSet = (Set<MatchRecord>) xstream.fromXML(is);
++        } catch(FileNotFoundException e){
++            e.printStackTrace();
++        }
++        
++        listModel = new DefaultListModel();
++        recordJList.setModel(listModel);
++        listModel.clear();
++        recordJList.setLayoutOrientation(JList.VERTICAL);
++        //        add the records to the JList
++        recordJList.setCellRenderer(new RecordListRenderer());
++        
++        List<MatchRecord> list = new ArrayList();
++        list.addAll(recordSet);
++        
++        for(int i = 0; i < list.size(); i++){
++            listModel.addElement(list.get(i));
++        }
++        
++        
++    }
++    
++    private void createButtonGroups(){
++        ButtonGroup winLossGroup = new ButtonGroup();
++        winLossGroup.add(winButton);
++        winLossGroup.add(lossButton);
++        winButton.setSelected(true);
++        
++        ButtonGroup gameTypeGroup = new ButtonGroup();
++        gameTypeGroup.add(rankedGameTypeButton);
++        gameTypeGroup.add(normalGameTypeButton);
++        normalGameTypeButton.setSelected(true);
++    }
++    
++    private void populateComboBoxes(){
++        
++        final DefaultComboBoxModel positionsModel = new DefaultComboBoxModel(POSITIONS);
++        positionCombo.setModel(positionsModel);
++        
++        List<String[]> champions = new ArrayList();
++        String[] input;
++        Vector comboBoxItems = new Vector();
++        
++        try{
++            CSVReader reader = new CSVReader(new FileReader("champions.csv"));
++            
++            
++            champions = reader.readAll();
++            Iterator<String[]> iterator = champions.iterator();
++            
++            while (iterator.hasNext()) {
++                for (String token : iterator.next()) {
++                    comboBoxItems.add(token);
++                }
++            }
++            
++            
++        } catch(IOException e){
++            e.printStackTrace();
++        }
++        
++        final DefaultComboBoxModel championsModel = new DefaultComboBoxModel(comboBoxItems);
++        championCombo.setModel(championsModel);
++    }
++    
++    
++    /**
++     * This method is called from within the constructor to initialize the form.
++     * WARNING: Do NOT modify this code. The content of this method is always
++     * regenerated by the Form Editor.
++     */
++    @SuppressWarnings("unchecked")
++    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
++    private void initComponents() {
++
++        tabPane = new javax.swing.JTabbedPane();
++        inputTab = new javax.swing.JPanel();
++        jPanel6 = new javax.swing.JPanel();
++        jPanel3 = new javax.swing.JPanel();
++        deathsLabel = new javax.swing.JLabel();
++        assistsLabel = new javax.swing.JLabel();
++        killsField = new javax.swing.JTextField();
++        killsLabel = new javax.swing.JLabel();
++        deathsField = new javax.swing.JTextField();
++        assistsField = new javax.swing.JTextField();
++        jPanel2 = new javax.swing.JPanel();
++        champLabel = new javax.swing.JLabel();
++        championCombo = new javax.swing.JComboBox();
++        jPanel4 = new javax.swing.JPanel();
++        lossButton = new javax.swing.JRadioButton();
++        winButton = new javax.swing.JRadioButton();
++        normalGameTypeButton = new javax.swing.JRadioButton();
++        rankedGameTypeButton = new javax.swing.JRadioButton();
++        jPanel5 = new javax.swing.JPanel();
++        goldField = new javax.swing.JTextField();
++        goldLabel = new javax.swing.JLabel();
++        csLabel = new javax.swing.JLabel();
++        csField = new javax.swing.JTextField();
++        submitButton = new javax.swing.JButton();
++        positionPanel = new javax.swing.JPanel();
++        positionLabel = new javax.swing.JLabel();
++        positionCombo = new javax.swing.JComboBox();
++        dateLabel = new javax.swing.JLabel();
++        dayText = new javax.swing.JTextField();
++        dateButton = new javax.swing.JButton();
++        monthText = new javax.swing.JTextField();
++        yearText = new javax.swing.JTextField();
++        jLabel1 = new javax.swing.JLabel();
++        jLabel2 = new javax.swing.JLabel();
++        jLabel3 = new javax.swing.JLabel();
++        listTab = new javax.swing.JPanel();
++        jPanel1 = new javax.swing.JPanel();
++        jScrollPane1 = new javax.swing.JScrollPane();
++        recordJList = new javax.swing.JList();
++        graphTab = new javax.swing.JPanel();
++
++        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
++
++        deathsLabel.setText("Deaths");
++
++        assistsLabel.setText("Assists");
++
++        killsField.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                killsFieldActionPerformed(evt);
++            }
++        });
++
++        killsLabel.setText("Kills");
++
++        assistsField.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                assistsFieldActionPerformed(evt);
++            }
++        });
++
++        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
++        jPanel3.setLayout(jPanel3Layout);
++        jPanel3Layout.setHorizontalGroup(
++            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel3Layout.createSequentialGroup()
++                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(killsField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(killsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addGap(18, 18, 18)
++                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(deathsField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(deathsLabel))
++                .addGap(18, 18, 18)
++                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(assistsField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(assistsLabel))
++                .addGap(125, 125, 125))
++        );
++        jPanel3Layout.setVerticalGroup(
++            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel3Layout.createSequentialGroup()
++                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(killsLabel)
++                    .addComponent(deathsLabel)
++                    .addComponent(assistsLabel))
++                .addGap(2, 2, 2)
++                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(killsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(deathsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(assistsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
++        );
++
++        champLabel.setText("Select champion:");
++
++        championCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
++
++        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
++        jPanel2.setLayout(jPanel2Layout);
++        jPanel2Layout.setHorizontalGroup(
++            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
++                .addComponent(champLabel)
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                .addComponent(championCombo, 0, 138, Short.MAX_VALUE)
++                .addGap(14, 14, 14))
++        );
++        jPanel2Layout.setVerticalGroup(
++            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel2Layout.createSequentialGroup()
++                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(champLabel)
++                    .addComponent(championCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
++        );
++
++        lossButton.setText("Loss");
++
++        winButton.setText("Win");
++
++        normalGameTypeButton.setText("Normal");
++
++        rankedGameTypeButton.setText("Ranked");
++
++        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
++        jPanel4.setLayout(jPanel4Layout);
++        jPanel4Layout.setHorizontalGroup(
++            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel4Layout.createSequentialGroup()
++                .addContainerGap()
++                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(lossButton)
++                    .addComponent(winButton))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
++                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(rankedGameTypeButton)
++                    .addComponent(normalGameTypeButton))
++                .addContainerGap())
++        );
++        jPanel4Layout.setVerticalGroup(
++            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel4Layout.createSequentialGroup()
++                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(winButton)
++                    .addComponent(rankedGameTypeButton))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(lossButton)
++                    .addComponent(normalGameTypeButton)))
++        );
++
++        goldLabel.setText("Gold Earned");
++
++        csLabel.setText("Minion Kills");
++
++        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
++        jPanel5.setLayout(jPanel5Layout);
++        jPanel5Layout.setHorizontalGroup(
++            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel5Layout.createSequentialGroup()
++                .addContainerGap()
++                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
++                    .addComponent(goldLabel)
++                    .addComponent(goldField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addGap(27, 27, 27)
++                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++                    .addComponent(csLabel)
++                    .addComponent(csField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
++        );
++        jPanel5Layout.setVerticalGroup(
++            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel5Layout.createSequentialGroup()
++                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(goldLabel)
++                    .addComponent(csLabel))
++                .addGap(1, 1, 1)
++                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(goldField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(csField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addGap(19, 19, 19))
++        );
++
++        submitButton.setText("Submit");
++        submitButton.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                submitButtonActionPerformed(evt);
++            }
++        });
++
++        positionLabel.setText("Position");
++
++        positionCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
++
++        javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
++        positionPanel.setLayout(positionPanelLayout);
++        positionPanelLayout.setHorizontalGroup(
++            positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(positionPanelLayout.createSequentialGroup()
++                .addContainerGap()
++                .addComponent(positionLabel)
++                .addGap(18, 18, 18)
++                .addComponent(positionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addContainerGap(42, Short.MAX_VALUE))
++        );
++        positionPanelLayout.setVerticalGroup(
++            positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(positionPanelLayout.createSequentialGroup()
++                .addContainerGap()
++                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                    .addComponent(positionLabel)
++                    .addComponent(positionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addContainerGap(18, Short.MAX_VALUE))
++        );
++
++        dateLabel.setText("Date:");
++
++        dayText.setText("Date");
++        dayText.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                dayTextActionPerformed(evt);
++            }
++        });
++
++        dateButton.setText("Today");
++        dateButton.addActionListener(new java.awt.event.ActionListener() {
++            public void actionPerformed(java.awt.event.ActionEvent evt) {
++                dateButtonActionPerformed(evt);
++            }
++        });
++
++        monthText.setText("Date");
++
++        yearText.setText("Date");
++
++        jLabel1.setText("dd");
++
++        jLabel2.setText("mm");
++
++        jLabel3.setText("yyyy");
++
++        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
++        jPanel6.setLayout(jPanel6Layout);
++        jPanel6Layout.setHorizontalGroup(
++            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel6Layout.createSequentialGroup()
++                .addContainerGap()
++                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
++                    .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(submitButton)
++                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addGap(18, 18, 18)
++                .addComponent(dateLabel)
++                .addGap(9, 9, 9)
++                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
++                    .addComponent(jLabel1)
++                    .addComponent(dayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
++                    .addComponent(jLabel2)
++                    .addComponent(monthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
++                    .addComponent(jLabel3)
++                    .addComponent(yearText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addComponent(dateButton)
++                .addContainerGap(14, Short.MAX_VALUE))
++        );
++        jPanel6Layout.setVerticalGroup(
++            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(jPanel6Layout.createSequentialGroup()
++                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
++                    .addGroup(jPanel6Layout.createSequentialGroup()
++                        .addContainerGap()
++                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
++                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
++                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(jLabel1)
++                            .addComponent(jLabel2)
++                            .addComponent(jLabel3))
++                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
++                            .addComponent(dateLabel)
++                            .addComponent(dayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                            .addComponent(dateButton)
++                            .addComponent(monthText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                            .addComponent(yearText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addGap(11, 11, 11)
++                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addGap(18, 18, 18)
++                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
++                .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
++                .addComponent(submitButton)
++                .addContainerGap())
++        );
++
++        javax.swing.GroupLayout inputTabLayout = new javax.swing.GroupLayout(inputTab);
++        inputTab.setLayout(inputTabLayout);
++        inputTabLayout.setHorizontalGroup(
++            inputTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(inputTabLayout.createSequentialGroup()
++                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
++                .addContainerGap())
++        );
++        inputTabLayout.setVerticalGroup(
++            inputTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(inputTabLayout.createSequentialGroup()
++                .addContainerGap()
++                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
++        );
++
++        tabPane.addTab("Input Stats", inputTab);
++
++        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
++        jPanel1.setLayout(jPanel1Layout);
++        jPanel1Layout.setHorizontalGroup(
++            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGap(0, 0, Short.MAX_VALUE)
++        );
++        jPanel1Layout.setVerticalGroup(
++            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGap(0, 50, Short.MAX_VALUE)
++        );
++
++        recordJList.setModel(new javax.swing.AbstractListModel() {
++            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
++            public int getSize() { return strings.length; }
++            public Object getElementAt(int i) { return strings[i]; }
++        });
++        jScrollPane1.setViewportView(recordJList);
++
++        javax.swing.GroupLayout listTabLayout = new javax.swing.GroupLayout(listTab);
++        listTab.setLayout(listTabLayout);
++        listTabLayout.setHorizontalGroup(
++            listTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listTabLayout.createSequentialGroup()
++                .addContainerGap()
++                .addGroup(listTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
++                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
++                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
++                .addContainerGap())
++        );
++        listTabLayout.setVerticalGroup(
++            listTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(listTabLayout.createSequentialGroup()
++                .addContainerGap()
++                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
++                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
++                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
++                .addContainerGap())
++        );
++
++        tabPane.addTab("Record List", listTab);
++
++        javax.swing.GroupLayout graphTabLayout = new javax.swing.GroupLayout(graphTab);
++        graphTab.setLayout(graphTabLayout);
++        graphTabLayout.setHorizontalGroup(
++            graphTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGap(0, 499, Short.MAX_VALUE)
++        );
++        graphTabLayout.setVerticalGroup(
++            graphTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGap(0, 356, Short.MAX_VALUE)
++        );
++
++        tabPane.addTab("Stats", graphTab);
++
++        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
++        getContentPane().setLayout(layout);
++        layout.setHorizontalGroup(
++            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addGroup(layout.createSequentialGroup()
++                .addGap(0, 0, Short.MAX_VALUE)
++                .addComponent(tabPane, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
++        );
++        layout.setVerticalGroup(
++            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
++            .addComponent(tabPane)
++        );
++
++        pack();
++    }// </editor-fold>//GEN-END:initComponents
++    
++    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
++        MatchRecord record = new MatchRecord();
++        
++        record.setAssists(Integer.parseInt(assistsField.getText()));
++        record.setKills(Integer.parseInt(killsField.getText()));
++        record.setDeaths(Integer.parseInt(deathsField.getText()));
++        record.setCs(Integer.parseInt(csField.getText()));
++        record.setGold(Integer.parseInt(goldField.getText()));
++        
++        record.setChampion(championCombo.getSelectedItem().toString());
++        record.setPosition(positionCombo.getSelectedItem().toString());
++        
++        String dd = dayText.getText();
++        String MM = monthText.getText();
++        String yyyy = yearText.getText();
++        record.setDate(dd, MM, yyyy);
++        
++        if(winButton.isSelected()){
++            record.setWin(true);
++        } else if(lossButton.isSelected()){
++            record.setWin(false);
++        }
++        
++        if(normalGameTypeButton.isSelected()){
++            record.setRanked(false);
++        } else if(rankedGameTypeButton.isSelected()){
++            record.setRanked(true);
++        }
++        
++        appendToXML(record);
++    }//GEN-LAST:event_submitButtonActionPerformed
++    
++    private void assistsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assistsFieldActionPerformed
++        // TODO add your handling code here:
++    }//GEN-LAST:event_assistsFieldActionPerformed
++    
++    private void killsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_killsFieldActionPerformed
++        // TODO add your handling code here:
++    }//GEN-LAST:event_killsFieldActionPerformed
++    
++    private void dateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateButtonActionPerformed
++        resetDate();
++    }//GEN-LAST:event_dateButtonActionPerformed
++    
++    private void dayTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayTextActionPerformed
++        // TODO add your handling code here:
++    }//GEN-LAST:event_dayTextActionPerformed
++    
++    /**
++     * @param args the command line arguments
++     */
++    public static void main(String args[]) {
++        /* Set the Nimbus look and feel */
++        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
++        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
++         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
++         */
++        try {
++            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
++                if ("Nimbus".equals(info.getName())) {
++                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
++                    break;
++                }
++            }
++        } catch (ClassNotFoundException ex) {
++            java.util.logging.Logger.getLogger(LolStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
++        } catch (InstantiationException ex) {
++            java.util.logging.Logger.getLogger(LolStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
++        } catch (IllegalAccessException ex) {
++            java.util.logging.Logger.getLogger(LolStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
++        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
++            java.util.logging.Logger.getLogger(LolStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
++        }
++        //</editor-fold>
++        
++        /* Create and display the form */
++        java.awt.EventQueue.invokeLater(new Runnable() {
++            public void run() {
++                new LolStats().setVisible(true);
++            }
++        });
++    }
++    
++    private void appendToXML(MatchRecord record){
++        recordSet.add(record);
++        
++        XStream xstream = new XStream(new DomDriver());
++        
++        OutputStream output = null;
++        try{
++            File filePath = new File("records.xml");
++            output = FileUtils.openOutputStream(filePath, false);
++            xstream.toXML(recordSet, output);
++        } catch(IOException e){
++            e.printStackTrace();
++        } finally {
++            IOUtils.closeQuietly(output);
++        }
++    }
++    
++    // Variables declaration - do not modify//GEN-BEGIN:variables
++    private javax.swing.JTextField assistsField;
++    private javax.swing.JLabel assistsLabel;
++    private javax.swing.JLabel champLabel;
++    private javax.swing.JComboBox championCombo;
++    private javax.swing.JTextField csField;
++    private javax.swing.JLabel csLabel;
++    private javax.swing.JButton dateButton;
++    private javax.swing.JLabel dateLabel;
++    private javax.swing.JTextField dayText;
++    private javax.swing.JTextField deathsField;
++    private javax.swing.JLabel deathsLabel;
++    private javax.swing.JTextField goldField;
++    private javax.swing.JLabel goldLabel;
++    private javax.swing.JPanel graphTab;
++    private javax.swing.JPanel inputTab;
++    private javax.swing.JLabel jLabel1;
++    private javax.swing.JLabel jLabel2;
++    private javax.swing.JLabel jLabel3;
++    private javax.swing.JPanel jPanel1;
++    private javax.swing.JPanel jPanel2;
++    private javax.swing.JPanel jPanel3;
++    private javax.swing.JPanel jPanel4;
++    private javax.swing.JPanel jPanel5;
++    private javax.swing.JPanel jPanel6;
++    private javax.swing.JScrollPane jScrollPane1;
++    private javax.swing.JTextField killsField;
++    private javax.swing.JLabel killsLabel;
++    private javax.swing.JPanel listTab;
++    private javax.swing.JRadioButton lossButton;
++    private javax.swing.JTextField monthText;
++    private javax.swing.JRadioButton normalGameTypeButton;
++    private javax.swing.JComboBox positionCombo;
++    private javax.swing.JLabel positionLabel;
++    private javax.swing.JPanel positionPanel;
++    private javax.swing.JRadioButton rankedGameTypeButton;
++    private javax.swing.JList recordJList;
++    private javax.swing.JButton submitButton;
++    private javax.swing.JTabbedPane tabPane;
++    private javax.swing.JRadioButton winButton;
++    private javax.swing.JTextField yearText;
++    // End of variables declaration//GEN-END:variables
++}
+diff --git a/src/LoLStats/MatchRecord.java b/src/LoLStats/MatchRecord.java
+new file mode 100644
+index 0000000..36bb626
+--- /dev/null
++++ b/src/LoLStats/MatchRecord.java
+@@ -0,0 +1,124 @@
++package LoLStats;
++
++import java.util.Date;
++
++/*
++ * To change this template, choose Tools | Templates
++ * and open the template in the editor.
++ */
++
++/**
++ *
++ * @author Matthew
++ */
++public class MatchRecord {
++    private String champion;
++    private Integer kills;
++    private Integer deaths;
++    private Integer assists;
++    private Integer gold;
++    private boolean win;
++    private String position;
++    private boolean ranked;
++    private String date;
++    private Integer cs;
++
++    public boolean isRanked() {
++        return ranked;
++    }
++
++    public Integer getKills() {
++        return kills;
++    }
++
++    public void setKills(Integer kills) {
++        this.kills = kills;
++    }
++
++    public Integer getDeaths() {
++        return deaths;
++    }
++
++    public void setDeaths(Integer deaths) {
++        this.deaths = deaths;
++    }
++
++    public Integer getCs() {
++        return cs;
++    }
++
++    public void setCs(Integer cs) {
++        this.cs = cs;
++    }
++
++    public Integer getAssists() {
++        return assists;
++    }
++
++    public void setAssists(Integer assists) {
++        this.assists = assists;
++    }
++
++    public Integer getGold() {
++        return gold;
++    }
++
++    public void setGold(Integer gold) {
++        this.gold = gold;
++    }
++
++    public String getDate() {
++        return date;
++    }
++
++    public void setDate(Date date) {
++        this. date = date.toString();
++    }
++    
++    public void setDate(String day, String month, String year){        
++            String d = day + "/" + month + "/" + year;
++            date = d;
++            
++    }
++    
++    public void setRanked(boolean gameType) {
++        this.ranked = gameType;
++    }
++    
++    public String getChampion() {
++        return champion;
++    }
++
++    public void setChampion(String champion) {
++        this.champion = champion;
++    }
++
++    public void setWin(boolean win) {
++        this.win = win;
++    }
++    
++    public void setPosition(String position) {
++        this.position = position;
++    }
++    
++    public boolean isWin() {
++        return win;
++    }
++    
++    public String getPosition() {
++        return position;
++    }
++    
++    public void printAll(){
++        System.out.println("Champion: " + champion);
++        System.out.println("Position: " + position);
++        System.out.println("Win?: " + win);
++        System.out.println("Kills: " + kills);
++        System.out.println("Deaths: "+ deaths);
++        System.out.println("Assists: " + assists);
++        System.out.println("Gold: " + gold);
++        System.out.println("Ranked?: "+ ranked);
++        System.out.println("Date: " + date);
++        System.out.println("Minion kills: " + cs);
++    }
++}
+diff --git a/src/LoLStats/RecordListRenderer.java b/src/LoLStats/RecordListRenderer.java
+new file mode 100644
+index 0000000..38df5a3
+--- /dev/null
++++ b/src/LoLStats/RecordListRenderer.java
+@@ -0,0 +1,67 @@
++/*
++ * To change this template, choose Tools | Templates
++ * and open the template in the editor.
++ */
++package LoLStats;
++
++import java.awt.Component;
++import java.awt.GridLayout;
++import javax.swing.JLabel;
++import javax.swing.JList;
++import javax.swing.JPanel;
++import javax.swing.ListCellRenderer;
++
++/**
++ *
++ * @author Matthew
++ */
++public class RecordListRenderer extends JPanel implements ListCellRenderer {
++    
++    private JLabel[] labels = new JLabel[10];    
++    
++    public RecordListRenderer(){
++        setOpaque(true);
++        setLayout(new GridLayout(1, 10));
++        
++        for(int i = 0; i <10; i++){
++            labels[i] = new JLabel();
++            add(labels[i]);
++        }       
++        //set font size + colour here
++    }
++    
++    public Component getListCellRendererComponent(JList list,
++            Object r,
++            int index,
++            boolean isSelected,
++            boolean hasFocus){
++        
++        MatchRecord record = (MatchRecord) r;
++        
++        labels[0].setText(record.getDate());
++        labels[1].setText(record.getChampion());
++        
++        if(record.isWin()){
++            labels[2].setText("Victory");
++        } else{
++            labels[2].setText("Defeat");
++        }
++        
++        labels[3].setText("Kills: " + record.getKills());
++        labels[4].setText("Deaths: " + record.getDeaths());
++        labels[5].setText("Assists: " + record.getAssists());
++        labels[6].setText("Gold Earned: " + record.getGold());
++        labels[7].setText("Minion Kills: " + record.getCs());
++        labels[8].setText(record.getPosition());
++        
++        if(record.isRanked()){
++            labels[9].setText("Ranked");
++        } else {
++            labels[9].setText("Normal");
++        }
++        
++        return this;
++    }
++    
++    
++}
